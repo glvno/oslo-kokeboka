@@ -1,0 +1,13 @@
+{
+  "editor.hover.enabled": true,
+  "editor.hover.sticky": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.tabWidth": 2,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 0,
+  "cSpell.words": [
+    "formik"
+  ]
+}
