@@ -4,7 +4,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   extends: ['plugin:@typescript-eslint/recommended'],
   rules: {
-    'no-console': ['error'],
+    'no-console': ['warn'],
     'react/no-array-index-key': ['error'],
     'react/jsx-key': ['error'],
     'react/boolean-prop-naming': ['error'],
