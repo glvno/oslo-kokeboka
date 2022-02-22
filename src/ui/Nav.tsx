@@ -15,7 +15,7 @@ export const Nav: FC = () => {
   return (
     <StyledNav>
       <div>
-        <Link to="/">Your Recipe</Link>
+        <Link to="/your-recipe">Your Recipe</Link>
       </div>
       <div>
         <Link to="/recipes">Oslo Recipes</Link>
