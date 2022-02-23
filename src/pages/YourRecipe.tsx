@@ -1,7 +1,8 @@
 import { FC } from 'React';
 import { Formik, Form, Field } from 'formik';
 import styled from '@emotion/styled';
-// import Select from 'react-select';
+import Input from '../ui/Input';
+import Select from '../ui/Select';
 const YourRecipe: FC = () => {
   const bydelAry = [
     'Alna',
@@ -24,6 +25,18 @@ const YourRecipe: FC = () => {
 
   const categoryAry = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
+  const ingredientCount = 3;
+
+  const Select = ({ name, options }) => {
+    return (
+      <Field as="select" name={name}>
+        {options.map((option, i) => (
+          <option value={option} label={option} key={`${option}${i.toString()}`} />
+        ))}
+      </Field>
+    );
+  };
+
   return (
     <>
       <h1>Your Recipe</h1>
@@ -36,6 +49,7 @@ const YourRecipe: FC = () => {
           yield: '1',
           prepTimeHours: 0,
           prepTimeMinutes: 0,
+          ingredients: [],
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
@@ -43,55 +57,25 @@ const YourRecipe: FC = () => {
           return (
             <form onSubmit={props.handleSubmit}>
               <div>
-                Recipe Name:{' '}
-                <input
-                  name="recipeName"
-                  value={props.values.recipeName}
-                  onChange={props.handleChange}
-                />
+                Recipe Name: <Input name="recipeName" placeholder="My Recipe" />
               </div>
               <div>
-                Category:{' '}
-                <select name="category" value={props.values.category} onChange={props.handleChange}>
-                  {categoryAry.map((category) => (
-                    <option value={category} label={category} key={category} />
-                  ))}
-                </select>
+                Category: <Select name="category" options={categoryAry} />
               </div>
               <div>
-                Author:{' '}
-                <input
-                  name="author"
-                  onChange={props.handleChange}
-                  value={props.values.author}
-                  placeholder="Anonymous"
-                />
+                Author: <Input name="author" placeholder="Name" />
               </div>
               <div>
-                Bydel:{' '}
-                <select name="bydel" onChange={props.handleChange} value={props.values.bydel}>
-                  {bydelAry.map((bydel) => {
-                    return <option value={bydel} label={bydel} key={bydel} />;
-                  })}
-                </select>
+                Bydel:
+                <Select name="bydel" options={bydelAry} />{' '}
               </div>
               <div>
                 Yield:{' '}
-                <select name="yield" onChange={props.handleChange} value={props.values.yield}>
-                  {' '}
-                  {Array.from(Array(maxDropdown).keys()).map((num) => (
-                    <option
-                      value={num.toString()}
-                      label={num.toString()}
-                      key={`yield${num.toString()}`}
-                    />
-                  ))}
-                  <option
-                    value={`${maxDropdown.toString()}+`}
-                    label={`${maxDropdown.toString()}+`}
-                    key={`yield${maxDropdown.toString()}`}
-                  />
-                </select>
+                <Select
+                  name="yield"
+                  // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
+                  options={Array.from(Array(maxDropdown).keys()).slice(1).concat(`${maxDropdown}+`)}
+                />
               </div>
               <div>
                 Time to prepare:{' '}
@@ -118,7 +102,13 @@ const YourRecipe: FC = () => {
                 />
               </div>
               <div>
-                <div>Ingredients:</div>
+                Ingredients
+                <div>
+                  Ingredient:
+                  {Array.from(Array(ingredientCount).keys()).map((num) => {
+                    return 'klsdjf';
+                  })}
+                </div>
               </div>
 
               <pre>{JSON.stringify(props, null, 2)}</pre>
