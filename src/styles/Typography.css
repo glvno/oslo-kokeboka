@@ -7,3 +7,8 @@ h1 {
   color: var(--text);
   margin: 0;
 }
+
+@font-face {
+  font-family: 'HwAtlanticTrialRegular';
+  src: local('HwAtlanticTrialRegular'), url(../fonts/HwAtlanticTrialRegular.woff) format('woff');
+}
