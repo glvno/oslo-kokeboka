@@ -1,5 +1,5 @@
-import { FC } from 'React';
-import { Formik, Form, Field } from 'formik';
+import { FC, useState } from 'react';
+import { Formik, Form, Field, FieldArray } from 'formik';
 import styled from '@emotion/styled';
 import Input from '../ui/Input';
 import Select from '../ui/Select';
@@ -25,31 +25,19 @@ const YourRecipe: FC = () => {
 
   const categoryAry = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
-  const ingredientCount = 3;
-
-  const Select = ({ name, options }) => {
-    return (
-      <Field as="select" name={name}>
-        {options.map((option, i) => (
-          <option value={option} label={option} key={`${option}${i.toString()}`} />
-        ))}
-      </Field>
-    );
-  };
-
   return (
     <>
       <h1>Your Recipe</h1>
       <Formik
         initialValues={{
           recipeName: '',
-          bydel: '',
+          bydel: 'Alna',
           category: '',
           author: '',
           yield: '1',
           prepTimeHours: 0,
           prepTimeMinutes: 0,
-          ingredients: [],
+          ingredients: [{ name: '', qty: '', units: '' }],
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
@@ -79,36 +67,66 @@ const YourRecipe: FC = () => {
               </div>
               <div>
                 Time to prepare:{' '}
-                <input
-                  placeholder="00"
+                <Field
                   type="number"
+                  placeholder="00"
                   step="1"
                   min="0"
                   max="12"
                   name="prepTimeHours"
-                  onChange={props.handleChange}
-                  value={props.values.prepTimeHours}
                 />
                 :{' '}
-                <input
+                <Field
                   placeholder="00"
                   type="number"
                   step="5"
                   min="0"
                   max="55"
                   name="prepTimeMinutes"
-                  onChange={props.handleChange}
-                  value={props.values.prepTimeMinutes}
                 />
               </div>
               <div>
-                Ingredients
-                <div>
-                  Ingredient:
-                  {Array.from(Array(ingredientCount).keys()).map((num) => {
-                    return 'klsdjf';
-                  })}
-                </div>
+                Ingredients:
+                <FieldArray
+                  name="ingredients"
+                  render={(arrayHelpers) => {
+                    return props.values.ingredients.map((num, index) => {
+                      return (
+                        <div key={`ingredients${index}`}>
+                          Quantity:{' '}
+                          <Field placeholder="1" type="number" name={`ingredients.${index}.qty`} />{' '}
+                          Units:{' '}
+                          <Select
+                            name={`ingredients.${index}.units`}
+                            options={[
+                              'pinches',
+                              'tsps',
+                              'tbsps',
+                              'cups',
+                              'pints',
+                              'quarts',
+                              'gallons',
+                            ]}
+                          />
+                          Ingredient:{' '}
+                          <Input name={`ingredients.${index}.name`} placeholder="Ingredient" />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              return arrayHelpers.insert(index + 1, {
+                                name: '',
+                                qty: '',
+                                units: '',
+                              });
+                            }}
+                          >
+                            +
+                          </button>
+                        </div>
+                      );
+                    });
+                  }}
+                />
               </div>
 
               <pre>{JSON.stringify(props, null, 2)}</pre>
