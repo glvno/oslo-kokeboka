@@ -1,6 +1,5 @@
 import './styles/App.css';
 import Header from './ui/Header';
-import * as React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import YourRecipe from './pages/YourRecipe';
 import Recipes from './pages/Recipes';
@@ -14,11 +13,11 @@ function App() {
       <Header />
       <Nav />
       <Routes>
-        <Route exact path="/" element={<Navigate replace to="/your-recipe" />} />
-        <Route exact path="/recipes" element={<Recipes />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/admin" element={<Admin />} />
-        <Route exact path="/your-recipe" element={<YourRecipe />} />
+        <Route path="/" element={<Navigate replace to="/your-recipe" />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/your-recipe" element={<YourRecipe />} />
       </Routes>
     </Router>
   );

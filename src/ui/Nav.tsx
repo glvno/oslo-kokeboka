@@ -14,18 +14,10 @@ const StyledNav = styled.nav`
 export const Nav: FC = () => {
   return (
     <StyledNav>
-      <div>
-        <Link to="/your-recipe">Your Recipe</Link>
-      </div>
-      <div>
-        <Link to="/recipes">Oslo Recipes</Link>
-      </div>
-      <div>
-        <Link to="/about">About</Link>
-      </div>
-      <div>
-        <Link to="/admin">Admin</Link>
-      </div>
+      <Link to="/your-recipe">Your Recipe</Link>
+      <Link to="/recipes">Oslo Recipes</Link>
+      <Link to="/about">About</Link>
+      <Link to="/admin">Admin</Link>
     </StyledNav>
   );
 };
