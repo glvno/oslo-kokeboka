@@ -2,6 +2,7 @@ import Select from './Select';
 import { Field } from 'formik';
 import Input from './Input';
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -24,7 +25,7 @@ const StyledField = styled(Field)`
   color: var(--text);
 `;
 
-const Ingredient = ({ arrayHelpers, index }) => {
+const Ingredient: FC = ({ arrayHelpers, index }) => {
   return (
     <StyledDiv key={`ingredients${index}`}>
       <StyledField placeholder="1" type="number" name={`ingredients.${index}.qty`} />

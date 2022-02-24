@@ -1,5 +1,6 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 const StyledField = styled(Field)`
   background: var(--inputbackground);
@@ -10,7 +11,7 @@ const StyledField = styled(Field)`
   margin-bottom: 10px;
 `;
 
-const InputHHMM = (name) => {
+const InputHHMM: FC = (name) => {
   return (
     <div>
       <StyledField

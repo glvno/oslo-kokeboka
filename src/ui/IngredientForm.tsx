@@ -1,6 +1,7 @@
 import { FieldArray } from 'formik';
 import Ingredient from './Ingredient';
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 const StyledFieldArray = styled(FieldArray)`
   background: var(--background);
@@ -12,7 +13,7 @@ const StyledFieldArray = styled(FieldArray)`
   justify-content: space-between;
 `;
 
-const IngredientForm = ({ props }) => {
+const IngredientForm: FC = ({ props }) => {
   return (
     <StyledFieldArray
       placeholder="Ingredients"

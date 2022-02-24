@@ -1,5 +1,6 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 const StyledField = styled(Field)`
   background: var(--inputbackground);
@@ -13,7 +14,7 @@ const StyledField = styled(Field)`
     color: var(--text);;
 `;
 
-const TextArea = ({ name, placeholder }) => {
+const TextArea: FC = ({ name, placeholder }) => {
   return <StyledField name={name} placeholder={placeholder} component="textarea" />;
 };
 

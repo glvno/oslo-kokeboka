@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { FieldArray, Field } from 'formik';
 import TextArea from './TextArea';
+import { FC } from 'react';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -12,7 +13,7 @@ const StyledDiv = styled.div`
   margin-bottom: 10px;
 `;
 
-const DirectionsBox = ({ props }) => {
+const DirectionsBox: FC = ({ props }) => {
   return (
     <FieldArray
       name="directions"
