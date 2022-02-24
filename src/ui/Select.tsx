@@ -2,7 +2,7 @@ import { Field } from 'formik';
 import styled from '@emotion/styled';
 
 const StyledField = styled(Field)`
-  background: var(--background);
+  background: var(--inputbackground);
   border: 1px var(--text) solid;
   color: var(--text);
   height: 51px;

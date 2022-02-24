@@ -9,14 +9,18 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-left;
   gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
 `;
 
 const StyledField = styled(Field)`
-  border-radius: 5px;
-  border: 1px var(--text) solid;
-  height: 51;
+  border-radius: 0px;
+  border-bottom: 1px var(--text) solid;
+  height: 40px;
   width: 10%;
   padding-left: 10px;
+  background: var(--inputbackground);
+  margin-bottom: 10px;
 `;
 
 const Ingredient = ({ arrayHelpers, index }) => {

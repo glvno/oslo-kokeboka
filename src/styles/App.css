@@ -35,3 +35,10 @@ form {
   flex-direction: column;
   justify-content: space-around;
 }
+
+button {
+  border: 1px var(--text) solid;
+  color: var(--text);
+  height: 30px;
+  border-radius: 5px;
+}
