@@ -6,6 +6,8 @@ import Select from './Select';
 import Ingredient from './Ingredient';
 import IngredientForm from './IngredientForm';
 import InputHHMM from './InputHHMM';
+import DirectionsBox from './DirectionsBox';
+import TextArea from './TextArea';
 
 const RecipeForm: FC = ({ className }) => {
   const bydelAry = [
@@ -35,64 +37,37 @@ const RecipeForm: FC = ({ className }) => {
         initialValues={{
           recipeName: '',
           bydel: 'Alna',
+          story: '',
           category: '',
           author: '',
           yield: '1',
           prepTime: { hours: 0, minutes: 0 },
           ingredients: [{ name: '', qty: '', units: '' }],
           directions: [''],
+          notes: '',
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
         {(props) => {
           return (
             <form onSubmit={props.handleSubmit}>
-              <div>
-                <Input name="recipeName" placeholder="What is the name of the dish?" />
-              </div>
-              <div>
-                Category: <Select name="category" options={categoryAry} />
-              </div>
-              <div>
-                <Input name="author" placeholder="Tell us your name..." />
-              </div>
-              <div>
-                Bydel:
-                <Select name="bydel" options={bydelAry} />{' '}
-              </div>
-              <div>
-                Yield:{' '}
-                <Select
-                  name="yield"
-                  // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
-                  options={Array.from(Array(maxDropdown).keys()).slice(1).concat(`${maxDropdown}+`)}
-                />
-              </div>
-              <div>
-                Time to prepare: <InputHHMM name="prepTime" />
-              </div>
-              <IngredientForm props={props} />
-              Directions:
-              <FieldArray
-                name="directions"
-                render={(arrayHelpers) => {
-                  return props.values.directions.map((_, index) => {
-                    return (
-                      <div key={`directions${index * 10}`}>
-                        <Field
-                          placeholder="Enter directions here..."
-                          component="textarea"
-                          name={`directions.${index}`}
-                          key={`directions${index * 10}`}
-                        />
-                        <button type="button" onClick={() => arrayHelpers.insert(index + 1, '')}>
-                          +
-                        </button>
-                      </div>
-                    );
-                  });
-                }}
+              <Input name="recipeName" placeholder="What is the name of the dish?" />
+              Category: <Select name="category" options={categoryAry} />
+              <Input name="author" placeholder="Tell us your name..." />
+              Bydel:
+              <Select name="bydel" options={bydelAry} />{' '}
+              <TextArea name="story" placeholder="What makes this dish special to you?" />
+              Yield:{' '}
+              <Select
+                name="yield"
+                // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
+                options={Array.from(Array(maxDropdown).keys()).slice(1).concat(`${maxDropdown}+`)}
               />
+              Time to prepare: <InputHHMM name="prepTime" />
+              <IngredientForm props={props} />
+              <DirectionsBox props={props} />
+              <TextArea name="notes" placeholder="Any additional notes goe here!" />
+              <button onSubmit={props.handleSubmit}>Submit</button>
             </form>
           );
         }}

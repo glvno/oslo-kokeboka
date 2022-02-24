@@ -14,23 +14,21 @@ const StyledFieldArray = styled(FieldArray)`
 
 const IngredientForm = ({ props }) => {
   return (
-    <div>
-      <StyledFieldArray
-        placeholder="Ingredients"
-        name="ingredients"
-        render={(arrayHelpers) => {
-          return props.values.ingredients.map((_, index) => {
-            return (
-              <Ingredient
-                index={index}
-                arrayHelpers={arrayHelpers}
-                key={`ingredient.${index * 1000}`}
-              />
-            );
-          });
-        }}
-      />
-    </div>
+    <StyledFieldArray
+      placeholder="Ingredients"
+      name="ingredients"
+      render={(arrayHelpers) => {
+        return props.values.ingredients.map((_, index) => {
+          return (
+            <Ingredient
+              index={index}
+              arrayHelpers={arrayHelpers}
+              key={`ingredient.${index * 1000}`}
+            />
+          );
+        });
+      }}
+    />
   );
 };
 

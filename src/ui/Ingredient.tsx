@@ -21,6 +21,7 @@ const StyledField = styled(Field)`
   padding-left: 10px;
   background: var(--inputbackground);
   margin-bottom: 10px;
+  color: var(--text);
 `;
 
 const Ingredient = ({ arrayHelpers, index }) => {

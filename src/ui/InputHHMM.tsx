@@ -12,7 +12,7 @@ const StyledField = styled(Field)`
 
 const InputHHMM = (name) => {
   return (
-    <>
+    <div>
       <StyledField
         type="number"
         placeholder="00"
@@ -32,7 +32,7 @@ const InputHHMM = (name) => {
       />
       {'  '}
       minutes
-    </>
+    </div>
   );
 };
 
