@@ -7,14 +7,16 @@ const StyledDiv = styled.div`
   color: var(--text);
   height: 51px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-left;
+  gap: 10px;
 `;
 
 const StyledField = styled(Field)`
   border-radius: 5px;
   border: 1px var(--text) solid;
   height: 51;
-  width: 5vw;
+  width: 10%;
+  padding-left: 10px;
 `;
 
 const Ingredient = ({ arrayHelpers, index }) => {

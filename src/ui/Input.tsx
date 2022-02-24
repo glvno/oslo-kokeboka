@@ -7,7 +7,9 @@ const StyledField = styled(Field)`
   color: var(--text);
   height: 51px;
   border-radius: 5px;
-  width: 90%;
+  width: 50%;
+  padding-left: 10px;
+  margin-bottom: 10px;
 `;
 const Input = ({ name, placeholder }) => {
   return <StyledField type="input" name={name} placeholder={placeholder} />;

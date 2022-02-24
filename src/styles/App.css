@@ -26,4 +26,12 @@ body {
   color: var(--text);
   display: flex;
   justify-content: space-around;
+  font-size: 17px;
+  line-height: 122%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

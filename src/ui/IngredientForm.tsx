@@ -8,7 +8,6 @@ const StyledFieldArray = styled(FieldArray)`
   color: var(--text);
   height: 51px;
   border-radius: 5px;
-  float: left;
 `;
 
 const IngredientForm = ({ props }) => {

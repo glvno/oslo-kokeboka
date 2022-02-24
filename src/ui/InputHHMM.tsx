@@ -7,6 +7,8 @@ const StyledField = styled(Field)`
   color: var(--text);
   height: 51px;
   border-radius: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
 `;
 
 const InputHHMM = (name) => {
@@ -20,7 +22,7 @@ const InputHHMM = (name) => {
         max="12"
         name={`${name}.hours`}
       />
-      :{' '}
+      hours{'  '}
       <StyledField
         placeholder="00"
         type="number"
@@ -29,6 +31,8 @@ const InputHHMM = (name) => {
         max="55"
         name={`${name}.minutes`}
       />
+      {'  '}
+      minutes
     </>
   );
 };
