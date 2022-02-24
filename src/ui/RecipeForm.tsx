@@ -6,7 +6,8 @@ import Select from './Select';
 import Ingredient from './Ingredient';
 import IngredientForm from './IngredientForm';
 import InputHHMM from './InputHHMM';
-const RecipeForm: FC = () => {
+
+const RecipeForm: FC = ({ className }) => {
   const bydelAry = [
     'Alna',
     'Bjerke',
@@ -29,7 +30,7 @@ const RecipeForm: FC = () => {
   const categoryAry = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
   return (
-    <>
+    <div className={className}>
       <Formik
         initialValues={{
           recipeName: '',
@@ -39,6 +40,7 @@ const RecipeForm: FC = () => {
           yield: '1',
           prepTime: { hours: 0, minutes: 0 },
           ingredients: [{ name: '', qty: '', units: '' }],
+          directions: [''],
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
@@ -46,13 +48,13 @@ const RecipeForm: FC = () => {
           return (
             <form onSubmit={props.handleSubmit}>
               <div>
-                Recipe Name: <Input name="recipeName" placeholder="My Recipe" />
+                <Input name="recipeName" placeholder="What is the name of the dish?" />
               </div>
               <div>
                 Category: <Select name="category" options={categoryAry} />
               </div>
               <div>
-                Author: <Input name="author" placeholder="Name" />
+                <Input name="author" placeholder="Tell us your name..." />
               </div>
               <div>
                 Bydel:
@@ -70,12 +72,32 @@ const RecipeForm: FC = () => {
                 Time to prepare: <InputHHMM name="prepTime" />
               </div>
               <IngredientForm props={props} />
-              <pre>{JSON.stringify(props, null, 2)}</pre>
+              Directions:
+              <FieldArray
+                name="directions"
+                render={(arrayHelpers) => {
+                  return props.values.directions.map((_, index) => {
+                    return (
+                      <div key={`directions${index * 10}`}>
+                        <Field
+                          placeholder="Enter directions here..."
+                          component="textarea"
+                          name={`directions.${index}`}
+                          key={`directions${index * 10}`}
+                        />
+                        <button type="button" onClick={() => arrayHelpers.insert(index + 1, '')}>
+                          +
+                        </button>
+                      </div>
+                    );
+                  });
+                }}
+              />
             </form>
           );
         }}
       </Formik>
-    </>
+    </div>
   );
 };
 

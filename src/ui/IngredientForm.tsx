@@ -1,11 +1,21 @@
 import { FieldArray } from 'formik';
 import Ingredient from './Ingredient';
+import styled from '@emotion/styled';
+
+const StyledFieldArray = styled(FieldArray)`
+  background: var(--background);
+  border: 1px var(--text) solid;
+  color: var(--text);
+  height: 51px;
+  border-radius: 5px;
+  float: left;
+`;
 
 const IngredientForm = ({ props }) => {
   return (
     <div>
-      Ingredients:
-      <FieldArray
+      <StyledFieldArray
+        placeholder="Ingredients"
         name="ingredients"
         render={(arrayHelpers) => {
           return props.values.ingredients.map((_, index) => {

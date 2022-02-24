@@ -20,3 +20,10 @@ a {
   color: var(--text);
   text-decoration: none;
 }
+
+body {
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  justify-content: space-around;
+}
