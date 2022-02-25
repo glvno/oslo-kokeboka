@@ -30,6 +30,7 @@ const StyledDiv = styled.div`
   border-left: 1px var(--text) solid;
   border-right: 1px var(--text) solid;
   padding: 5px;
+  box-shadow: -10px 10px 15px var(--background);
   a {
     display: flex;
     justify-content: flex-end;
