@@ -10,9 +10,8 @@ const StyledButton = styled.button`
 
 interface ButtonProps {
   label: string;
-  onSubmit?: () => void;
+  onClick?: (values: object) => Promise<void>;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
 }
 
 const Button: FC<ButtonProps> = ({ label, type, onClick }) => {

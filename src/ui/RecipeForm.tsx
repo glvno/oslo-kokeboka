@@ -7,6 +7,9 @@ import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './TextArea';
 import Button from './Button';
+import { object, string, array, bool, number, date, InferType } from 'yup';
+import recipeService from '../services/recipe';
+
 const bydels = [
   'Alna',
   'Bjerke',
@@ -28,6 +31,29 @@ const maxDropdown = 12;
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
+const formValueSchema = object({
+  recipeName: string().max(250).required(),
+  bydel: string().required(),
+  category: string(),
+  story: string().max(1500),
+  author: string(),
+  prepTime: object({ hours: string(), minutes: string() }),
+  ingredients: array(
+    object({
+      name: string().required().max(250),
+      qty: string().max(100),
+      units: string(),
+    })
+  ),
+  directions: array(string().max(500)).min(1).max(100),
+  notes: string().max(500),
+  file: object(),
+  email: string().email(),
+  contact: bool(),
+  reviewed: bool(),
+  hidden: bool(),
+});
+
 interface RecipeFormProps {
   className: string;
 }
@@ -48,13 +74,17 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
           ingredients: [{ name: '', qty: '', units: '' }],
           directions: [''],
           notes: '',
-          file: null,
+          file: {},
           email: '',
           contact: false,
           reviewed: false,
           hidden: false,
         }}
-        onSubmit={(values) => console.log(values, null, 2)}
+        onSubmit={async (values) => {
+          const parsedValues = await formValueSchema.validate(values);
+          recipeService.create(parsedValues);
+          console.log(parsedValues);
+        }}
       >
         {(props) => {
           return (
@@ -94,16 +124,7 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                 <Field type="checkbox" name="contact" /> Would you be open to sharing the story
                 behind your recipe?
               </label>
-              <Button
-                label="Submit"
-                onSubmit={() => {
-                  console.log({
-                    fileName: props.values.file.name,
-                    type: props.values.file.type,
-                    size: `${props.values.file.size} bytes`,
-                  });
-                }}
-              />
+              <Button label="Submit" type="submit" />
             </form>
           );
         }}
