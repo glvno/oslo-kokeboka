@@ -26,9 +26,8 @@ const StyledDiv = styled.div`
   align-items: flex-end;
   margin-right: 20px;
   background: linear-gradient(var(--background), var(--inputbackground));
-  border-bottom: 1px var(--text) solid;
-  border-left: 1px var(--text) solid;
-  border-right: 1px var(--text) solid;
+  border: solid var(--text);
+  border-width: 0px 0.1px 0.5px 1px;
   padding: 5px;
   box-shadow: -10px 10px 15px var(--background);
   a {

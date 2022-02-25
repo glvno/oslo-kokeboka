@@ -46,6 +46,7 @@ const RecipeForm: FC = ({ className }) => {
           ingredients: [{ name: '', qty: '', units: '' }],
           directions: [''],
           notes: '',
+          file: null,
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
@@ -71,7 +72,27 @@ const RecipeForm: FC = ({ className }) => {
               <IngredientForm props={props} />
               <DirectionsBox props={props} />
               <TextArea name="notes" placeholder="Any additional notes go here!" />
-              <button onSubmit={props.handleSubmit}>Submit</button>
+              <input
+                id="file"
+                name="file"
+                type="file"
+                onChange={(event) => {
+                  props.setFieldValue('file', event.currentTarget.files[0]);
+                }}
+              />
+              <button
+                className="plus"
+                onSubmit={(values) => {
+                  console.log({
+                    fileName: values.file.name,
+                    type: values.file.type,
+                    size: `${values.file.size} bytes`,
+                  });
+                }}
+              >
+                Submit
+              </button>
+              <pre>{JSON.stringify(props.values, null, 4)}</pre>
             </form>
           );
         }}
