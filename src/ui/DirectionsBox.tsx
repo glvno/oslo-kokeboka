@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FieldArray, Field } from 'formik';
+import { FieldArray } from 'formik';
 import TextArea from './TextArea';
 import { FC } from 'react';
 
@@ -14,12 +14,12 @@ const StyledDiv = styled.div`
   padding-bottom: 10px;
 `;
 
-const DirectionsBox: FC = ({ props }) => {
+const DirectionsBox: FC = () => {
   return (
     <FieldArray
       name="directions"
       render={(arrayHelpers) => {
-        return props.values.directions.map((_, index) => {
+        return arrayHelpers.form.values.directions.map((_, index) => {
           return (
             <StyledDiv key={`directions${index * 10}`}>
               <TextArea

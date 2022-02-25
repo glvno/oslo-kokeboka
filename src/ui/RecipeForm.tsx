@@ -1,15 +1,17 @@
-import { FC, useState } from 'react';
-import { Formik, Form, Field, FieldArray } from 'formik';
-import styled from '@emotion/styled';
+import { FC } from 'react';
+import { Formik, Field } from 'formik';
 import Input from './Input';
 import Select from './Select';
-import Ingredient from './Ingredient';
 import IngredientForm from './IngredientForm';
 import InputHHMM from './InputHHMM';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './TextArea';
 
-const RecipeForm: FC = ({ className }) => {
+interface RecipeFormProps {
+  className: string;
+}
+
+const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
   //TODO: convert strings in ary to objs for label/id purposes
   const bydelAry = [
     'Alna',
@@ -70,11 +72,14 @@ const RecipeForm: FC = ({ className }) => {
                 name="yield"
                 placeholder="How many servings does this recipe produce?"
                 // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
-                options={Array.from(Array(maxDropdown).keys()).slice(1).concat(`${maxDropdown}+`)}
+                options={Array.from(Array(maxDropdown).keys())
+                  .slice(1)
+                  .map((num) => num.toString())
+                  .concat(`${maxDropdown}+`)}
               />
               Time to prepare: <InputHHMM name="prepTime" />
-              <IngredientForm props={props} />
-              <DirectionsBox props={props} />
+              <IngredientForm />
+              <DirectionsBox />
               <TextArea name="notes" placeholder="Any additional notes go here!" />
               <input
                 id="file"
@@ -91,11 +96,11 @@ const RecipeForm: FC = ({ className }) => {
               </label>
               <button
                 className="plus"
-                onSubmit={(values) => {
+                onSubmit={() => {
                   console.log({
-                    fileName: values.file.name,
-                    type: values.file.type,
-                    size: `${values.file.size} bytes`,
+                    fileName: props.values.file.name,
+                    type: props.values.file.type,
+                    size: `${props.values.file.size} bytes`,
                   });
                 }}
               >

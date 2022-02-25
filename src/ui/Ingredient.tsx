@@ -1,5 +1,5 @@
 import Select from './Select';
-import { Field } from 'formik';
+import { Field, ArrayHelpers } from 'formik';
 import Input from './Input';
 import styled from '@emotion/styled';
 import { FC } from 'react';
@@ -25,11 +25,17 @@ const StyledField = styled(Field)`
   color: var(--text);
 `;
 
-const Ingredient: FC = ({ arrayHelpers, index }) => {
+interface IngredientProps {
+  arrayHelpers: ArrayHelpers;
+  index: number;
+}
+
+const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   return (
     <StyledDiv key={`ingredients${index}`}>
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
       <Select
+        placeholder="units"
         name={`ingredients.${index}.units`}
         options={['pinches', 'tsps', 'tbsps', 'cups', 'pints', 'quarts', 'gallons']}
       />

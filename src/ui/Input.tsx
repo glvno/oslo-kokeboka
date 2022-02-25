@@ -14,7 +14,13 @@ const StyledField = styled(Field)`
     color: var(--text);
   }
 `;
-const Input: FC = ({ name, placeholder }) => {
+
+interface InputProps {
+  name: string;
+  placeholder: string;
+}
+
+const Input: FC<InputProps> = ({ name, placeholder }) => {
   return <StyledField type="input" name={name} placeholder={placeholder} />;
 };
 

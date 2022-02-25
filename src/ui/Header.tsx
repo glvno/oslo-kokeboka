@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import Flex from './Flex';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -18,8 +17,11 @@ const StyledHeader = styled.header`
   letter-spacing: 0.01em;
   text-transform: uppercase;
 `;
+interface HeaderProps {
+  title: string;
+}
 
-const Header: FC = ({ title }) => {
+const Header: FC<HeaderProps> = ({ title }) => {
   return <StyledHeader>{title}</StyledHeader>;
 };
 

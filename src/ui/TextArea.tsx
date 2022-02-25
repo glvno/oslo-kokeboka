@@ -17,7 +17,12 @@ const StyledField = styled(Field)`
     color: var(--text);;
 `;
 
-const TextArea: FC = ({ name, placeholder }) => {
+interface TextAreaProps {
+  name: string;
+  placeholder: string;
+}
+
+const TextArea: FC<TextAreaProps> = ({ name, placeholder }) => {
   return <StyledField name={name} placeholder={placeholder} component="textarea" />;
 };
 

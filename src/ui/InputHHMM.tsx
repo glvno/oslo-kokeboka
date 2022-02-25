@@ -12,7 +12,11 @@ const StyledField = styled(Field)`
   font-family: monospace;
 `;
 
-const InputHHMM: FC = (name) => {
+interface InputHHMMProps {
+  name: string;
+}
+
+const InputHHMM: FC<InputHHMMProps> = (name) => {
   return (
     <div>
       <StyledField
