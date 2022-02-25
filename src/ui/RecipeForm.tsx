@@ -41,12 +41,16 @@ const RecipeForm: FC = ({ className }) => {
           story: '',
           category: '',
           author: '',
-          yield: '',
+          yield: 0,
           prepTime: { hours: 0, minutes: 0 },
           ingredients: [{ name: '', qty: '', units: '' }],
           directions: [''],
           notes: '',
           file: null,
+          email: '',
+          contact: false,
+          reviewed: false,
+          hidden: false,
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
@@ -80,6 +84,11 @@ const RecipeForm: FC = ({ className }) => {
                   props.setFieldValue('file', event.currentTarget.files[0]);
                 }}
               />
+              <Input name="email" placeholder="Email" />{' '}
+              <label>
+                <Field type="checkbox" name="contact" /> Would you be open to sharing the story
+                behind your recipe?
+              </label>
               <button
                 className="plus"
                 onSubmit={(values) => {
@@ -92,7 +101,6 @@ const RecipeForm: FC = ({ className }) => {
               >
                 Submit
               </button>
-              <pre>{JSON.stringify(props.values, null, 4)}</pre>
             </form>
           );
         }}
