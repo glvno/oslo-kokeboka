@@ -36,10 +36,13 @@ form {
   justify-content: space-around;
 }
 
-button {
+.plus {
   border: 1px var(--text) solid;
-  color: var(--text);
   height: 30px;
   border-radius: 5px;
   background: var(--inputbackground);
+}
+
+button {
+  color: var(--text);
 }

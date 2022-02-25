@@ -35,6 +35,7 @@ const Ingredient: FC = ({ arrayHelpers, index }) => {
       />
       <Input name={`ingredients.${index}.name`} placeholder="Ingredient" />
       <button
+        className="plus"
         type="button"
         onClick={() => {
           return arrayHelpers.insert(index + 1, {

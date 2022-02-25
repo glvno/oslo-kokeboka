@@ -27,7 +27,11 @@ const DirectionsBox: FC = ({ props }) => {
                 name={`directions.${index}`}
                 key={`directions${index * 10}`}
               />
-              <button type="button" onClick={() => arrayHelpers.insert(index + 1, '')}>
+              <button
+                className="plus"
+                type="button"
+                onClick={() => arrayHelpers.insert(index + 1, '')}
+              >
                 +
               </button>
             </StyledDiv>
