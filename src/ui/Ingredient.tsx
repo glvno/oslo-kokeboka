@@ -20,7 +20,7 @@ const StyledField = styled(Field)`
   height: 40px;
   width: 10%;
   padding-left: 10px;
-  background: var(--inputbackground);
+  background: var(--input-background);
   margin-bottom: 10px;
   color: var(--text);
 `;

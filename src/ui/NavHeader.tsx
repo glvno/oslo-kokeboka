@@ -25,7 +25,7 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: flex-end;
   margin-right: 20px;
-  background: linear-gradient(var(--background), var(--inputbackground));
+  background: linear-gradient(var(--background), var(--input-background));
   border: solid var(--text);
   border-width: 0px 0.1px 0.5px 1px;
   padding: 5px;
