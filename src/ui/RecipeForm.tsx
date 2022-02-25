@@ -3,7 +3,7 @@ import { Formik, Field } from 'formik';
 import Input from './Input';
 import Select from './Select';
 import IngredientForm from './IngredientForm';
-import InputHHMM from './InputHHMM';
+import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './TextArea';
 
@@ -77,7 +77,7 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                   .map((num) => num.toString())
                   .concat(`${maxDropdown}+`)}
               />
-              Time to prepare: <InputHHMM name="prepTime" />
+              Time to prepare: <InputPrepTime name="prepTime" />
               <IngredientForm />
               <DirectionsBox />
               <TextArea name="notes" placeholder="Any additional notes go here!" />

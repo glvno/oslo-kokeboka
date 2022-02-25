@@ -12,11 +12,11 @@ const StyledField = styled(Field)`
   font-family: monospace;
 `;
 
-interface InputHHMMProps {
+interface InputPrepTimeProps {
   name: string;
 }
 
-const InputHHMM: FC<InputHHMMProps> = (name) => {
+const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
   return (
     <div>
       <StyledField
@@ -42,4 +42,4 @@ const InputHHMM: FC<InputHHMMProps> = (name) => {
   );
 };
 
-export default InputHHMM;
+export default InputPrepTime;
