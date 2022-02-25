@@ -8,13 +8,12 @@ const StyledNav = styled.nav`
   font-weight: normal;
   font-size: 30px;
   line-height: 114%;
-  padding-right: 100px;
   display: flex;
   /* or 34px */
 
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   flex-direction: column;
 
@@ -22,24 +21,42 @@ const StyledNav = styled.nav`
   text-transform: uppercase;
 `;
 
+const StyledDiv = styled.div`
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20px;
+  background: linear-gradient(var(--background), var(--inputbackground));
+  border-bottom: 1px var(--text) solid;
+  border-left: 1px var(--text) solid;
+  border-right: 1px var(--text) solid;
+  padding: 5px;
+  a {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    &:hover {
+      background: #ff8585;
+      color: var(--background);
+    }
+  }
+`;
+
 const NavHeader = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <StyledNav>
-      <button onClick={() => setIsActive(!isActive)}>{title.toUpperCase()} ▾</button>
-      <div
-        style={{
-          display: isActive ? 'flex' : 'none',
-          flexDirection: 'column',
-          alignItems: 'flex-end',
-          marginRight: '20px',
-        }}
+      <button
+        // style={{ display: isActive ? 'none' : 'flex' }}
+        onClick={() => setIsActive(!isActive)}
       >
+        {title.toUpperCase()} ▾
+      </button>
+      <StyledDiv style={{ display: isActive ? 'flex' : 'none' }}>
         <Link to="/your-recipe">Your Recipe</Link>
         <Link to="/recipes">Oslo Recipes</Link>
         <Link to="/about">About</Link>
         <Link to="/admin">Admin</Link>
-      </div>
+      </StyledDiv>
     </StyledNav>
   );
 };
