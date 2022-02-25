@@ -9,6 +9,7 @@ const StyledField = styled(Field)`
   height: 51px;
   padding-left: 10px;
   margin-bottom: 10px;
+  flex-grow: 1;
   &::placeholder {
     color: var(--text);
   }

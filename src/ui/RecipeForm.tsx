@@ -10,6 +10,7 @@ import DirectionsBox from './DirectionsBox';
 import TextArea from './TextArea';
 
 const RecipeForm: FC = ({ className }) => {
+  //TODO: convert strings in ary to objs for label/id purposes
   const bydelAry = [
     'Alna',
     'Bjerke',
@@ -36,11 +37,11 @@ const RecipeForm: FC = ({ className }) => {
       <Formik
         initialValues={{
           recipeName: '',
-          bydel: 'Alna',
+          bydel: '',
           story: '',
           category: '',
           author: '',
-          yield: '1',
+          yield: '',
           prepTime: { hours: 0, minutes: 0 },
           ingredients: [{ name: '', qty: '', units: '' }],
           directions: [''],
@@ -52,21 +53,24 @@ const RecipeForm: FC = ({ className }) => {
           return (
             <form onSubmit={props.handleSubmit}>
               <Input name="recipeName" placeholder="What is the name of the dish?" />
-              Category: <Select name="category" options={categoryAry} />
+              <Select
+                name="category"
+                options={categoryAry}
+                placeholder="What kind of recipe is this?"
+              />
               <Input name="author" placeholder="Tell us your name..." />
-              Bydel:
-              <Select name="bydel" options={bydelAry} />{' '}
+              <Select name="bydel" options={bydelAry} placeholder="Select your area" />
               <TextArea name="story" placeholder="What makes this dish special to you?" />
-              Yield:{' '}
               <Select
                 name="yield"
+                placeholder="How many servings does this recipe produce?"
                 // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
                 options={Array.from(Array(maxDropdown).keys()).slice(1).concat(`${maxDropdown}+`)}
               />
               Time to prepare: <InputHHMM name="prepTime" />
               <IngredientForm props={props} />
               <DirectionsBox props={props} />
-              <TextArea name="notes" placeholder="Any additional notes goe here!" />
+              <TextArea name="notes" placeholder="Any additional notes go here!" />
               <button onSubmit={props.handleSubmit}>Submit</button>
             </form>
           );

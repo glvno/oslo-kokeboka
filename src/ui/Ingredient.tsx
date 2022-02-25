@@ -28,7 +28,7 @@ const StyledField = styled(Field)`
 const Ingredient: FC = ({ arrayHelpers, index }) => {
   return (
     <StyledDiv key={`ingredients${index}`}>
-      <StyledField placeholder="1" type="number" name={`ingredients.${index}.qty`} />
+      <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
       <Select
         name={`ingredients.${index}.units`}
         options={['pinches', 'tsps', 'tbsps', 'cups', 'pints', 'quarts', 'gallons']}

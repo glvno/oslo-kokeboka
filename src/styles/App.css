@@ -41,4 +41,5 @@ button {
   color: var(--text);
   height: 30px;
   border-radius: 5px;
+  background: var(--inputbackground);
 }

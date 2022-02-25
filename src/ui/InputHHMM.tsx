@@ -9,6 +9,7 @@ const StyledField = styled(Field)`
   height: 51px;
   padding-left: 10px;
   margin-bottom: 10px;
+  font-family: monospace;
 `;
 
 const InputHHMM: FC = (name) => {

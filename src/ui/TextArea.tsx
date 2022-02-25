@@ -7,9 +7,12 @@ const StyledField = styled(Field)`
   border-bottom: 1px var(--text) solid;
   color: var(--text);
   height: 51px;
-  width: 50%;
   padding-left: 10px;
   margin-bottom: 10px;
+  padding-top:10px;
+  resize: none;
+  flex-grow: 1;
+  flex-basis:200px;
   &::placeholder {
     color: var(--text);;
 `;
