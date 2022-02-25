@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
+  padding-top: 25px;
   line-height: 114%;
   /* or 34px */
 
