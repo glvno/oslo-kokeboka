@@ -6,16 +6,19 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 50px;
   background-color: var(--background);
+  font-weight: 600;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 114%;
+  /* or 34px */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 `;
 
-const Header: FC = () => {
-  return (
-    <StyledHeader>
-      <Flex>
-        <h1>Oslo Kokebook</h1>
-      </Flex>
-    </StyledHeader>
-  );
+const Header: FC = ({ title }) => {
+  return <StyledHeader>{title}</StyledHeader>;
 };
 
 export default Header;

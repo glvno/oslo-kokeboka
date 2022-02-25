@@ -7,11 +7,12 @@ const StyledNav = styled.nav`
   height: 50px;
   background-color: var(--background);
   color: var(--text);
-  display: flex;
+  // display: flex;
+  display: none;
   justify-content: space-around;
 `;
 
-export const Nav: FC = () => {
+export const Nav: FC = ({ pageTitle }) => {
   return (
     <StyledNav>
       <Link to="/your-recipe">Your Recipe</Link>

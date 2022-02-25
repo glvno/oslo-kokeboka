@@ -10,7 +10,7 @@ import { Nav } from './ui/Nav';
 function App() {
   return (
     <Router basename="/oslo-kokebook/">
-      <Header />
+      <Header title="OSLO KOKEBOKA" />
       <Nav />
       <Routes>
         <Route path="/" element={<Navigate replace to="/your-recipe" />} />
