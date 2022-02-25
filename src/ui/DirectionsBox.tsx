@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { FieldArray } from 'formik';
 import TextArea from './TextArea';
 import { FC } from 'react';
+import Button from './Button';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -27,13 +28,7 @@ const DirectionsBox: FC = () => {
                 name={`directions.${index}`}
                 key={`directions${index * 10}`}
               />
-              <button
-                className="plus"
-                type="button"
-                onClick={() => arrayHelpers.insert(index + 1, '')}
-              >
-                +
-              </button>
+              <Button type="button" label="+" onClick={() => arrayHelpers.insert(index + 1, '')} />
             </StyledDiv>
           );
         });

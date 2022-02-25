@@ -6,6 +6,27 @@ import IngredientForm from './IngredientForm';
 import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './TextArea';
+import Button from './Button';
+const bydels = [
+  'Alna',
+  'Bjerke',
+  'Frogner',
+  'Gamle Oslo',
+  'Grorud',
+  'Grünerløkka',
+  'Nordre Aker',
+  'Nordstrand',
+  'Sagene',
+  'St. Hanshaugen',
+  'Stovner',
+  'Søndre Nordstrand',
+  'Ullern',
+  'Vestre Aker',
+  'Østensjø',
+];
+const maxDropdown = 12;
+
+const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
 interface RecipeFormProps {
   className: string;
@@ -13,27 +34,6 @@ interface RecipeFormProps {
 
 const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
   //TODO: convert strings in ary to objs for label/id purposes
-  const bydelAry = [
-    'Alna',
-    'Bjerke',
-    'Frogner',
-    'Gamle Oslo',
-    'Grorud',
-    'Grünerløkka',
-    'Nordre Aker',
-    'Nordstrand',
-    'Sagene',
-    'St. Hanshaugen',
-    'Stovner',
-    'Søndre Nordstrand',
-    'Ullern',
-    'Vestre Aker',
-    'Østensjø',
-  ];
-  const maxDropdown = 12;
-
-  const categoryAry = ['Appetizer', 'Entree', 'Drink', 'Other'];
-
   return (
     <div className={className}>
       <Formik
@@ -62,11 +62,11 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
               <Input name="recipeName" placeholder="What is the name of the dish?" />
               <Select
                 name="category"
-                options={categoryAry}
+                options={categories}
                 placeholder="What kind of recipe is this?"
               />
               <Input name="author" placeholder="Tell us your name..." />
-              <Select name="bydel" options={bydelAry} placeholder="Select your area" />
+              <Select name="bydel" options={bydels} placeholder="Select your area" />
               <TextArea name="story" placeholder="What makes this dish special to you?" />
               <Select
                 name="yield"
@@ -94,8 +94,8 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                 <Field type="checkbox" name="contact" /> Would you be open to sharing the story
                 behind your recipe?
               </label>
-              <button
-                className="plus"
+              <Button
+                label="Submit"
                 onSubmit={() => {
                   console.log({
                     fileName: props.values.file.name,
@@ -103,9 +103,7 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                     size: `${props.values.file.size} bytes`,
                   });
                 }}
-              >
-                Submit
-              </button>
+              />
             </form>
           );
         }}

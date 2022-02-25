@@ -3,6 +3,7 @@ import { Field, ArrayHelpers } from 'formik';
 import Input from './Input';
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import Button from './Button';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -40,19 +41,11 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         options={['pinches', 'tsps', 'tbsps', 'cups', 'pints', 'quarts', 'gallons']}
       />
       <Input name={`ingredients.${index}.name`} placeholder="Ingredient" />
-      <button
-        className="plus"
+      <Button
         type="button"
-        onClick={() => {
-          return arrayHelpers.insert(index + 1, {
-            name: '',
-            qty: '',
-            units: '',
-          });
-        }}
-      >
-        +
-      </button>
+        label="+"
+        onClick={() => arrayHelpers.insert(index + 1, { name: '', quantity: '', units: '' })}
+      />
     </StyledDiv>
   );
 };
