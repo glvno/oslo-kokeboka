@@ -1,6 +1,7 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import Flex from './Flex';
 
 const StyledField = styled(Field)`
   background: var(--input-background);
@@ -18,7 +19,8 @@ interface InputPrepTimeProps {
 
 const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
   return (
-    <div>
+    <Flex gap="15px" align="center">
+      <label style={{ display: 'inline-block' }}> Time to prepare:</label>
       <StyledField
         type="number"
         placeholder="00"
@@ -27,7 +29,8 @@ const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
         max="12"
         name={`${name}.hours`}
       />
-      hours{'  '}
+      <label>hours</label>
+      {'  '}
       <StyledField
         placeholder="00"
         type="number"
@@ -37,8 +40,8 @@ const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
         name={`${name}.minutes`}
       />
       {'  '}
-      minutes
-    </div>
+      <label>minutes</label>
+    </Flex>
   );
 };
 

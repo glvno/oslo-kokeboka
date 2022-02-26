@@ -24,7 +24,6 @@ const bydels = [
   'Vestre Aker',
   'Østensjø',
 ];
-const maxDropdown = 12;
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
@@ -56,9 +55,9 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
         }}
         onSubmit={(values) => console.log(values, null, 2)}
       >
-        {(props) => {
+        {({ handleSubmit, values }) => {
           return (
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <Input name="recipeName" placeholder="What is the name of the dish?" />
               <Select
                 name="category"
@@ -72,23 +71,22 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                 name="yield"
                 placeholder="How many servings does this recipe produce?"
                 // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
-                options={Array.from(Array(maxDropdown).keys())
-                  .slice(1)
-                  .map((num) => num.toString())
-                  .concat(`${maxDropdown}+`)}
+                options={Array(12)
+                  .fill(true)
+                  .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
               />
-              Time to prepare: <InputPrepTime name="prepTime" />
+              <InputPrepTime name="prepTime" />
               <IngredientForm />
               <DirectionsBox />
               <TextArea name="notes" placeholder="Any additional notes go here!" />
-              <input
+              {/* <input
                 id="file"
                 name="file"
                 type="file"
                 onChange={(event) => {
                   props.setFieldValue('file', event.currentTarget.files[0]);
                 }}
-              />
+              /> */}
               <Input name="email" placeholder="Email" />{' '}
               <label>
                 <Field type="checkbox" name="contact" /> Would you be open to sharing the story
@@ -98,9 +96,9 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                 label="Submit"
                 onSubmit={() => {
                   console.log({
-                    fileName: props.values.file.name,
-                    type: props.values.file.type,
-                    size: `${props.values.file.size} bytes`,
+                    fileName: values.file.name,
+                    type: values.file.type,
+                    size: `${values.file.size} bytes`,
                   });
                 }}
               />
