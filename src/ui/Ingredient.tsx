@@ -1,5 +1,5 @@
 import Select from './form/Select';
-import { Field, ArrayHelpers } from 'formik';
+import { Field, ArrayHelpers, FieldArrayRenderProps } from 'formik';
 import Input from './form/Input';
 import styled from '@emotion/styled';
 import { FC, useState } from 'react';
@@ -27,7 +27,7 @@ const StyledField = styled(Field)`
 `;
 
 interface IngredientProps {
-  arrayHelpers: ArrayHelpers;
+  arrayHelpers: ArrayHelpers & FieldArrayRenderProps;
   index: number;
 }
 

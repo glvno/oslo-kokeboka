@@ -9,7 +9,6 @@ const DirectionsBox: FC = () => {
       name="directions"
       render={(arrayHelpers) => {
         return arrayHelpers.form.values.directions.map((_, index) => {
-          console.log(index);
           keyCounter += 1;
 
           return <Direction arrayHelpers={arrayHelpers} index={index} key={keyCounter} />;

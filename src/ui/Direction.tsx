@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FieldArray, ArrayHelpers } from 'formik';
+import { ArrayHelpers, FieldArrayRenderProps } from 'formik';
 import TextArea from './form/TextArea';
 import { FC, useState } from 'react';
 import Button from './form/Button';
@@ -31,7 +31,6 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
         name={`directions.${index}`}
         handleTextAreaChange={() => {
           setHasMinusButton(index === 0 ? false : true);
-          console.log(arrayHelpers);
           setButtonDisabled(arrayHelpers.form.values.directions[index].length > 0 ? false : true);
         }}
       />

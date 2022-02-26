@@ -18,9 +18,6 @@ const StyledHeader = styled.header`
   letter-spacing: 0.01em;
   text-transform: uppercase;
 `;
-interface HeaderProps {
-  title: string;
-}
 
 const StyledNav = styled.nav`
   font-style: normal;
@@ -61,7 +58,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Header = ({ title }) => {
+const Header: FC<{ title: string }> = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <>

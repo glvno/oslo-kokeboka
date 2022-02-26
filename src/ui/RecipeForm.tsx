@@ -27,11 +27,7 @@ const bydels = [
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
-interface RecipeFormProps {
-  className: string;
-}
-
-const RecipeForm: FC<RecipeFormProps> = () => {
+const RecipeForm: FC = () => {
   //TODO: convert strings in ary to objs for label/id purposes
   return (
     <Formik
