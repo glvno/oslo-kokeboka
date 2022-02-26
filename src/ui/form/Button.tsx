@@ -7,8 +7,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
   background: var(--input-background);
   &:disabled {
-    border: 1px grey solid;
-    color: grey;
+    opacity: 0.2;
   }
 `;
 
