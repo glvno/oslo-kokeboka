@@ -8,10 +8,11 @@ const IngredientForm: FC = () => {
     <FieldArray
       name="ingredients"
       render={(arrayHelpers) => {
-        const uuid = new Date().getTime();
-        return arrayHelpers.form.values.ingredients.map((ingredient, index) => (
-          <Ingredient index={index} arrayHelpers={arrayHelpers} key={uuidv4()} />
-        ));
+        return arrayHelpers.form.values.ingredients.map((ingredient, index) => {
+          const uuid = uuidv4();
+
+          return <Ingredient index={index} arrayHelpers={arrayHelpers} key={uuid} />;
+        });
       }}
     />
   );
