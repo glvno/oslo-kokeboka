@@ -7,7 +7,7 @@ import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './form/TextArea';
 import Button from './form/Button';
-import { object, string, array, bool, number, date, InferType } from 'yup';
+import { object, string, array, bool } from 'yup';
 import recipeService from '../services/recipe';
 
 const bydels = [
@@ -57,7 +57,7 @@ interface RecipeFormProps {
   className: string;
 }
 
-const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
+const RecipeForm: FC<RecipeFormProps> = () => {
   //TODO: convert strings in ary to objs for label/id purposes
   return (
     <Formik

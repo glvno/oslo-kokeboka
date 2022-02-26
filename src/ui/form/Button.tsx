@@ -14,7 +14,6 @@ const StyledButton = styled.button`
 
 interface ButtonProps {
   label: string;
-  onClick?: (values: object) => Promise<void>;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
   isDisabled?: boolean;
