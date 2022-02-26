@@ -1,5 +1,4 @@
 import './styles/App.css';
-import Header from './ui/Header';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import YourRecipe from './pages/YourRecipe';
 import Recipes from './pages/Recipes';
@@ -9,7 +8,6 @@ import Admin from './pages/Admin';
 function App() {
   return (
     <Router basename="/oslo-kokebook/">
-      <Header title="OSLO KOKEBOKA" />
       <Routes>
         <Route path="" element={<Navigate replace to="/your-recipe" />} />
         <Route path="/recipes" element={<Recipes />} />

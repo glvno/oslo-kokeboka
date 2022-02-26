@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import RecipeForm from '../ui/RecipeForm';
 import styled from '@emotion/styled';
-import NavHeader from '../ui/NavHeader';
+import Page from '../ui/Page';
 
 const StyledRecipeForm = styled(RecipeForm)`
   margin: 2vw;
@@ -11,10 +11,8 @@ const StyledRecipeForm = styled(RecipeForm)`
 `;
 
 const YourRecipe: FC = () => (
-  <div style={{ maxWidth: '500px' }}>
-    {' '}
-    <NavHeader title="Your Recipe" />
+  <Page title="Your Recipe">
     <StyledRecipeForm />
-  </div>
+  </Page>
 );
 export default YourRecipe;

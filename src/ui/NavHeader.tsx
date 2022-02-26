@@ -1,7 +1,26 @@
-import Header from './Header';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { FC, useState } from 'react';
+
+const StyledHeader = styled.header`
+  width: 100%;
+  height: 50px;
+  background-color: var(--background);
+  font-weight: 600;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  padding-top: 25px;
+  padding-left: 25px;
+  line-height: 114%;
+  /* or 34px */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+`;
+interface HeaderProps {
+  title: string;
+}
 
 const StyledNav = styled.nav`
   font-style: normal;
@@ -44,20 +63,24 @@ const StyledDiv = styled.div`
 const NavHeader = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <StyledNav>
-      <button
-        // style={{ display: isActive ? 'none' : 'flex' }}
-        onClick={() => setIsActive(!isActive)}
-      >
-        {title.toUpperCase()} ▾
-      </button>
-      <StyledDiv style={{ display: isActive ? 'flex' : 'none' }}>
-        <Link to="/your-recipe">Your Recipe</Link>
-        <Link to="/recipes">Oslo Recipes</Link>
-        <Link to="/about">About</Link>
-        <Link to="/admin">Admin</Link>
-      </StyledDiv>
-    </StyledNav>
+    <>
+      <StyledHeader>Oslo Kokeboka</StyledHeader>
+
+      <StyledNav>
+        <button
+          // style={{ display: isActive ? 'none' : 'flex' }}
+          onClick={() => setIsActive(!isActive)}
+        >
+          {title.toUpperCase()} ▾
+        </button>
+        <StyledDiv style={{ display: isActive ? 'flex' : 'none' }}>
+          <Link to="/your-recipe">Your Recipe</Link>
+          <Link to="/recipes">Oslo Recipes</Link>
+          <Link to="/about">About</Link>
+          <Link to="/admin">Admin</Link>
+        </StyledDiv>
+      </StyledNav>
+    </>
   );
 };
 
