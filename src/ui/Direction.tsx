@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
 `;
 
 interface DirectionProps {
-  arrayHelpers: ArrayHelpers;
+  arrayHelpers: ArrayHelpers & FieldArrayRenderProps;
   index: number;
 }
 
