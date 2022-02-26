@@ -2,7 +2,7 @@ import Select from './form/Select';
 import { Field, ArrayHelpers } from 'formik';
 import Input from './form/Input';
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Button from './form/Button';
 
 const StyledDiv = styled.div`
@@ -32,6 +32,7 @@ interface IngredientProps {
 }
 
 const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
+  const [buttonDisabled, setButtonDisabled] = useState(true);
   return (
     <StyledDiv>
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
@@ -40,8 +41,15 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         name={`ingredients.${index}.units`}
         options={['pinches', 'tsps', 'tbsps', 'cups', 'pints', 'quarts', 'gallons']}
       />
-      <Input name={`ingredients.${index}.name`} placeholder="Ingredient" />
+      <Input
+        name={`ingredients.${index}.name`}
+        placeholder="Ingredient"
+        handleInputChange={() => {
+          setButtonDisabled(false);
+        }}
+      />
       <Button
+        isDisabled={buttonDisabled}
         type="button"
         label="+"
         onClick={() => arrayHelpers.insert(index + 1, { name: '', quantity: '', units: '' })}

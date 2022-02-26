@@ -13,11 +13,12 @@ interface ButtonProps {
   onSubmit?: () => void;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
+  isDisabled: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ label, type, onClick }) => {
+const Button: FC<ButtonProps> = ({ label, type, onClick, isDisabled }) => {
   return (
-    <StyledButton onClick={onClick} type={type}>
+    <StyledButton onClick={onClick} type={type} disabled={isDisabled}>
       {label}
     </StyledButton>
   );

@@ -1,6 +1,6 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 const StyledField = styled(Field)`
   background: var(--input-background);
@@ -20,7 +20,8 @@ interface InputProps {
   placeholder: string;
 }
 
-const Input: FC<InputProps> = ({ name, placeholder }) => {
+const Input: FC<InputProps> = ({ name, placeholder, handleInputChange }) => {
+  useEffect(() => handleInputChange);
   return <StyledField type="input" name={name} placeholder={placeholder} />;
 };
 
