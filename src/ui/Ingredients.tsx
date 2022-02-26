@@ -7,15 +7,9 @@ const IngredientForm: FC = () => {
     <FieldArray
       name="ingredients"
       render={(arrayHelpers) => {
-        return arrayHelpers.form.values.ingredients.map((_, index) => {
-          return (
-            <Ingredient
-              index={index}
-              arrayHelpers={arrayHelpers}
-              key={`ingredient.${index * 1000}`}
-            />
-          );
-        });
+        return arrayHelpers.form.values.ingredients.map((ingredient, index) => (
+          <Ingredient index={index} arrayHelpers={arrayHelpers} key={ingredient} />
+        ));
       }}
     />
   );

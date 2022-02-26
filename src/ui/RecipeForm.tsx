@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Formik, Field } from 'formik';
-import Input from './Input';
-import Select from './Select';
-import IngredientForm from './IngredientForm';
+import Input from './form/Input';
+import Select from './form/Select';
+import IngredientForm from './Ingredients';
 import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
-import TextArea from './TextArea';
-import Button from './Button';
+import TextArea from './form/TextArea';
+import Button from './form/Button';
 const bydels = [
   'Alna',
   'Bjerke',

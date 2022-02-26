@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { FieldArray } from 'formik';
-import TextArea from './TextArea';
+import TextArea from './form/TextArea';
 import { FC } from 'react';
-import Button from './Button';
+import Button from './form/Button';
 
 const StyledDiv = styled.div`
   color: var(--text);

@@ -1,9 +1,9 @@
-import Select from './Select';
+import Select from './form/Select';
 import { Field, ArrayHelpers } from 'formik';
-import Input from './Input';
+import Input from './form/Input';
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import Button from './Button';
+import Button from './form/Button';
 
 const StyledDiv = styled.div`
   color: var(--text);

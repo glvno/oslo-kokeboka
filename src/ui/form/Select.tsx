@@ -14,7 +14,7 @@ const StyledField = styled(Field)`
 
 interface SelectProps {
   name: string;
-  options: Array<string | number>;
+  options: string[];
   placeholder: string;
 }
 
@@ -22,8 +22,8 @@ const Select: FC<SelectProps> = ({ name, options, placeholder }) => {
   return (
     <StyledField as="select" name={name}>
       <option value="" label={placeholder} />
-      {options.map((option: string, i) => (
-        <option value={option} label={option} key={`${option}${i.toString()}`} />
+      {options.map((option: string) => (
+        <option value={option} label={option} key={option} />
       ))}
     </StyledField>
   );
