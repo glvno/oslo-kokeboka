@@ -33,6 +33,7 @@ interface IngredientProps {
 
 const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [hasMinusButton, setHasMinusButton] = useState(false);
   return (
     <StyledDiv>
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
@@ -45,7 +46,7 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         name={`ingredients.${index}.name`}
         placeholder="Ingredient"
         handleInputChange={() => {
-          // console.log();
+          setHasMinusButton(index > 0 ? true : false);
           setButtonDisabled(
             arrayHelpers.form.values.ingredients[index].name.length > 0 ? false : true
           );
@@ -57,6 +58,11 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         label="+"
         onClick={() => arrayHelpers.insert(index + 1, { name: '', quantity: '', units: '' })}
       />
+      {hasMinusButton ? (
+        <Button type="button" label={`-`} onClick={() => arrayHelpers.remove(index)} />
+      ) : (
+        ''
+      )}
     </StyledDiv>
   );
 };

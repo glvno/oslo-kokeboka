@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   height: 30px;
   border-radius: 5px;
   background: var(--input-background);
+  padding: 3px;
   &:disabled {
     opacity: 0.2;
   }
