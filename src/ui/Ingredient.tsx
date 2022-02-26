@@ -31,7 +31,7 @@ interface IngredientProps {
   index: number;
 }
 
-const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
+const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index, values }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
   return (
     <StyledDiv>
@@ -45,7 +45,10 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         name={`ingredients.${index}.name`}
         placeholder="Ingredient"
         handleInputChange={() => {
-          setButtonDisabled(false);
+          // console.log();
+          setButtonDisabled(
+            arrayHelpers.form.values.ingredients[index].name.length > 0 ? false : true
+          );
         }}
       />
       <Button
