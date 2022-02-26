@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Formik, Field } from 'formik';
 import Input from './form/Input';
 import Select from './form/Select';
-import IngredientForm from './Ingredients';
+import Ingredients from './Ingredients';
 import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './form/TextArea';
@@ -76,7 +76,7 @@ const RecipeForm: FC<RecipeFormProps> = ({ className }) => {
                   .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
               />
               <InputPrepTime name="prepTime" />
-              <IngredientForm />
+              <Ingredients />
               <DirectionsBox />
               <TextArea name="notes" placeholder="Any additional notes go here!" />
               {/* <input

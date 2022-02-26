@@ -3,7 +3,7 @@ import Ingredient from './Ingredient';
 import { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const IngredientForm: FC = () => {
+const Ingredients: FC = () => {
   return (
     <FieldArray
       name="ingredients"
@@ -18,4 +18,4 @@ const IngredientForm: FC = () => {
   );
 };
 
-export default IngredientForm;
+export default Ingredients;

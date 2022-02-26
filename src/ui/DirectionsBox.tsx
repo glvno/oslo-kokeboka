@@ -22,13 +22,10 @@ const DirectionsBox: FC = () => {
       name="directions"
       render={(arrayHelpers) => {
         return arrayHelpers.form.values.directions.map((_, index) => {
+          const uuid = uuidv4();
           return (
-            <StyledDiv key={uuidv4()}>
-              <TextArea
-                placeholder="Enter directions here..."
-                name={`directions.${index}`}
-                key={`directions${index * 10}`}
-              />
+            <StyledDiv key={uuid}>
+              <TextArea placeholder="Enter directions here..." name={`directions.${index}`} />
               <Button type="button" label="+" onClick={() => arrayHelpers.insert(index + 1, '')} />
             </StyledDiv>
           );
