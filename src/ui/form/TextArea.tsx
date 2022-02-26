@@ -20,9 +20,10 @@ const StyledField = styled(Field)`
 interface TextAreaProps {
   name: string;
   placeholder: string;
+  handleTextAreaChange?: () => void;
 }
 
-const TextArea: FC<TextAreaProps> = ({ name, placeholder, handleTextAreaChange }) => {
+const TextArea: FC<TextAreaProps> = ({ name, placeholder, handleTextAreaChange = undefined }) => {
   useEffect(() => handleTextAreaChange);
   return <StyledField name={name} placeholder={placeholder} component="textarea" />;
 };

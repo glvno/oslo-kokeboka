@@ -18,9 +18,10 @@ const StyledField = styled(Field)`
 interface InputProps {
   name: string;
   placeholder: string;
+  handleInputChange?: () => void;
 }
 
-const Input: FC<InputProps> = ({ name, placeholder, handleInputChange }) => {
+const Input: FC<InputProps> = ({ name, placeholder, handleInputChange = undefined }) => {
   useEffect(() => handleInputChange);
   return <StyledField type="input" name={name} placeholder={placeholder} />;
 };

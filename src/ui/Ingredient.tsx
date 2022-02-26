@@ -31,7 +31,7 @@ interface IngredientProps {
   index: number;
 }
 
-const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index, values }) => {
+const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
   return (
     <StyledDiv>
