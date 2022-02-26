@@ -33,7 +33,7 @@ interface IngredientProps {
 
 const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   return (
-    <StyledDiv key={`ingredients${index}`}>
+    <StyledDiv>
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
       <Select
         placeholder="units"

@@ -3,6 +3,7 @@ import { FieldArray } from 'formik';
 import TextArea from './form/TextArea';
 import { FC } from 'react';
 import Button from './form/Button';
+import { v4 as uuidv4 } from 'uuid';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -22,7 +23,7 @@ const DirectionsBox: FC = () => {
       render={(arrayHelpers) => {
         return arrayHelpers.form.values.directions.map((_, index) => {
           return (
-            <StyledDiv key={`directions${index * 10}`}>
+            <StyledDiv key={uuidv4()}>
               <TextArea
                 placeholder="Enter directions here..."
                 name={`directions.${index}`}
