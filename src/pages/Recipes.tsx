@@ -38,8 +38,8 @@ const Recipes: FC = () => {
           <Flex gap="10px" padding="24px 0px 24px">
             <Button
               type="button"
-              label="Bydels"
-              style={bydelView ? 'salmon' : 'wine'}
+              label={bydelFilter || 'Bydels'}
+              style={bydelView || bydelFilter ? 'salmon' : 'wine'}
               onClick={() => setBydelView(!bydelView)}
             />
             <Button
@@ -49,7 +49,7 @@ const Recipes: FC = () => {
                 setBydelView(false);
                 setBydelFilter('');
               }}
-              style={bydelView ? 'wine' : 'salmon'}
+              style={bydelView || bydelFilter !== '' ? 'wine' : 'salmon'}
             />
           </Flex>
 
