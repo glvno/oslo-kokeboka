@@ -69,15 +69,17 @@ const BottomRightHolePunch = styled.div`
   right: -5px;
 `;
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, handleRecipeClick }) => {
   return (
-    <StyledFlex direction="column">
-      <TopLeftHolePunch /> <TopRightHolePunch />
-      <BottomLeftHolePunch /> <BottomRightHolePunch />
-      <RecipeName>{recipe.recipeName}</RecipeName>
-      <footer>Submitted By {recipe.author}</footer>
-      <BydelName>{recipe.bydel}</BydelName>
-    </StyledFlex>
+    <button onClick={() => handleRecipeClick(recipe.id)}>
+      <StyledFlex direction="column">
+        <TopLeftHolePunch /> <TopRightHolePunch />
+        <BottomLeftHolePunch /> <BottomRightHolePunch />
+        <RecipeName>{recipe.recipeName}</RecipeName>
+        <footer>Submitted By {recipe.author}</footer>
+        <BydelName>{recipe.bydel}</BydelName>
+      </StyledFlex>
+    </button>
   );
 };
 

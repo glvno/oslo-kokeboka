@@ -41,3 +41,5 @@ const Flex = styled.div<FlexProps>`
 `;
 
 export default Flex;
+
+//TODO: abstract to take any HTML element?

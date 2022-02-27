@@ -7,12 +7,15 @@ import Button from '../ui/form/Button';
 import Flex from '../ui/Flex';
 import { bydels } from '../util/constants';
 import BydelCard from '../ui/BydelCard';
+import { useNavigate } from 'react-router-dom';
 
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
   const [bydelView, setBydelView] = useState(false);
   const [bydelFilter, setBydelFilter] = useState('');
+
   let keyCounter = 0;
+  let navigate = useNavigate();
 
   useEffect(() => {
     const getRecipes = async () => {
@@ -27,6 +30,10 @@ const Recipes: FC = () => {
   const handleBydelClick = (bydelName) => {
     setBydelFilter(bydelName);
     setBydelView(false);
+  };
+
+  const handleRecipeClick = (id) => {
+    navigate(`/recipe/${id}`);
   };
 
   return (
@@ -71,7 +78,13 @@ const Recipes: FC = () => {
               })
             : filteredRecipes.map((recipe) => {
                 keyCounter += 1;
-                return <RecipeCard recipe={recipe} key={keyCounter} />;
+                return (
+                  <RecipeCard
+                    recipe={recipe}
+                    key={keyCounter}
+                    handleRecipeClick={handleRecipeClick}
+                  />
+                );
               })}
         </Flex>
       </main>
