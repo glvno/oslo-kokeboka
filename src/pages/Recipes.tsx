@@ -11,6 +11,7 @@ import BydelCard from '../ui/BydelCard';
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
   const [bydelView, setBydelView] = useState(false);
+  const [bydelFilter, setBydelFilter] = useState('');
   let keyCounter = 0;
 
   useEffect(() => {
@@ -20,6 +21,14 @@ const Recipes: FC = () => {
     };
     getRecipes();
   }, []);
+
+  const filteredRecipes = recipes.filter((recipe) => recipe.bydel.includes(`${bydelFilter}`));
+
+  const handleBydelClick = (bydelName) => {
+    setBydelFilter(bydelName);
+    setBydelView(false);
+  };
+
   return (
     <Page title="Oslo Recipes">
       <main>
@@ -36,7 +45,10 @@ const Recipes: FC = () => {
             <Button
               type="button"
               label="Unsorted"
-              onClick={() => setBydelView(!bydelView)}
+              onClick={() => {
+                setBydelView(false);
+                setBydelFilter('');
+              }}
               style={bydelView ? 'wine' : 'salmon'}
             />
           </Flex>
@@ -44,11 +56,17 @@ const Recipes: FC = () => {
           {bydelView
             ? bydels.map((bydel) => {
                 const bydelRecipes = recipes.filter((recipe) => recipe.bydel === bydel);
-                const recipeCount = bydelRecipes.length;
                 keyCounter += 1;
-                return <BydelCard bydel={bydel} count={recipeCount} key={keyCounter} />;
+                return (
+                  <BydelCard
+                    bydel={bydel}
+                    bydelRecipes={bydelRecipes}
+                    key={keyCounter}
+                    handleBydelClick={handleBydelClick}
+                  />
+                );
               })
-            : recipes.map((recipe) => {
+            : filteredRecipes.map((recipe) => {
                 console.log(recipe);
                 keyCounter += 1;
                 return <RecipeCard recipe={recipe} key={keyCounter} />;

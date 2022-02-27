@@ -29,14 +29,17 @@ const StyledFlex = styled(Flex)`
   border-radius: 5px;
 `;
 
-const BydelCard = ({ bydel, count }) => {
+const BydelCard = ({ bydel, bydelRecipes, handleBydelClick }) => {
+  const count = bydelRecipes.length;
   return (
-    <StyledFlex direction="column">
-      <BydelName>{bydel}</BydelName>
-      <BydelNumber>
-        {count} {count === 1 ? 'recipe' : 'recipes'}{' '}
-      </BydelNumber>
-    </StyledFlex>
+    <button onClick={() => handleBydelClick(bydel)}>
+      <StyledFlex direction="column">
+        <BydelName>{bydel}</BydelName>
+        <BydelNumber>
+          {count} {count === 1 ? 'recipe' : 'recipes'}{' '}
+        </BydelNumber>
+      </StyledFlex>
+    </button>
   );
 };
 
