@@ -8,10 +8,13 @@ const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
   let keyCounter = 0;
 
-  useEffect(async () => {
-    const response = await recipeService.getAll();
-    console.log(response);
-    setRecipes(response);
+  useEffect(() => {
+    const getRecipes = async () => {
+      const response = await recipeService.getAll();
+      console.log(response);
+      setRecipes(response);
+    };
+    getRecipes();
   }, []);
   return (
     <Page title="Oslo Recipes">

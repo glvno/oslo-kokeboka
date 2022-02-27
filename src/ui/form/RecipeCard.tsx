@@ -29,10 +29,52 @@ const StyledFlex = styled(Flex)`
   border-radius: 5px;
 `;
 
+const TopLeftHolePunch = styled.div`
+  position: absolute;
+  background: var(--background);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 33%;
+  left: -5px;
+`;
+
+const TopRightHolePunch = styled.div`
+  position: absolute;
+  background: var(--background);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 33%;
+  right: -5px;
+`;
+
+const BottomLeftHolePunch = styled.div`
+  position: absolute;
+  background: var(--background);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 66%;
+  left: -5px;
+`;
+
+const BottomRightHolePunch = styled.div`
+  position: absolute;
+  background: var(--background);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 66%;
+  right: -5px;
+`;
+
 const RecipeCard = ({ recipe }) => {
   const nothing = null;
   return (
     <StyledFlex direction="column">
+      <TopLeftHolePunch top="33%" /> <TopRightHolePunch />
+      <BottomLeftHolePunch /> <BottomRightHolePunch />
       <RecipeName>{recipe.recipeName}</RecipeName>
       <footer>Submitted By</footer>
       <AuthorName>{recipe.author}</AuthorName>

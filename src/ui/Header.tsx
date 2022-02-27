@@ -5,7 +5,7 @@ import Flex from './Flex';
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: var(--background);
   font-weight: 600;
   font-style: normal;
@@ -62,7 +62,7 @@ const StyledDiv = styled.div`
 const Header: FC<{ title: string }> = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <Flex width="100%" direction="column" justify="space-between" align="stretch">
+    <Flex width="100%" direction="column" align="stretch">
       <StyledHeader>Oslo Kokeboka</StyledHeader>
 
       <StyledNav>
