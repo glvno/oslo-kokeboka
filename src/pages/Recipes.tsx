@@ -70,7 +70,6 @@ const Recipes: FC = () => {
                 );
               })
             : filteredRecipes.map((recipe) => {
-                console.log(recipe);
                 keyCounter += 1;
                 return <RecipeCard recipe={recipe} key={keyCounter} />;
               })}

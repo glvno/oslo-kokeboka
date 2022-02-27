@@ -2,8 +2,13 @@ import axios from 'axios';
 const baseUrl = '/recipe';
 
 const getAll = async () => {
-  const request = axios.get(baseUrl);
-  return request.then((response) => response.data);
+  const response = await axios.get(baseUrl);
+  return response.data;
+};
+
+const getOne = async (id) => {
+  const response = await axios.get(`${baseUrl}/${id}`);
+  return response.data;
 };
 
 const create = async (newObject) => {
@@ -16,4 +21,4 @@ const update = (id, newObject) => {
   return request.then((response) => response.data);
 };
 
-export default { getAll, create, update };
+export default { getAll, getOne, create, update };
