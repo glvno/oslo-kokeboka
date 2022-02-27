@@ -57,10 +57,10 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         isDisabled={buttonDisabled}
         type="button"
         label="+"
-        onClick={() => arrayHelpers.insert(index + 1, { name: '', quantity: '', units: '' })}
+        onClick={() => arrayHelpers.insert(index + 1, { name: '', qty: '', units: '' })}
       />
       {hasMinusButton ? (
-        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
+        <Button type="button" style="small" label="-" onClick={() => arrayHelpers.remove(index)} />
       ) : (
         ''
       )}
