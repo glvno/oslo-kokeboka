@@ -9,7 +9,7 @@ const StyledField = styled(Field)`
   height: 48px;
   border-radius: 5px;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 interface SelectProps {

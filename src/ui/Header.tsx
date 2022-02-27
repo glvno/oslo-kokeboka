@@ -44,10 +44,10 @@ const StyledDiv = styled.div`
   align-items: flex-end;
   margin-right: 20px;
   background: linear-gradient(var(--background), var(--input-background));
-  border: solid var(--text);
+  // border: solid var(--text);
   border-width: 0px 0.1px 0.5px 1px;
   padding: 5px;
-  box-shadow: -10px 10px 15px var(--background);
+  // box-shadow: -10px 10px 15px var(--background);
   a {
     display: flex;
     justify-content: flex-end;
@@ -59,6 +59,12 @@ const StyledDiv = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  border: 0.5px var(--text) solid;
+  padding: 5px;
+  background: var(--input-background);
+`;
+
 const Header: FC<{ title: string }> = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
@@ -66,17 +72,12 @@ const Header: FC<{ title: string }> = ({ title }) => {
       <StyledHeader>Oslo Kokeboka</StyledHeader>
 
       <StyledNav>
-        <button
-          // style={{ display: isActive ? 'none' : 'flex' }}
-          onClick={() => setIsActive(!isActive)}
-        >
-          {title.toUpperCase()} ▾
-        </button>
+        <button onClick={() => setIsActive(!isActive)}>{title.toUpperCase()} ▾</button>
         <StyledDiv style={{ display: isActive ? 'flex' : 'none' }}>
-          <Link to="/your-recipe">Your Recipe</Link>
-          <Link to="/recipes">Oslo Recipes</Link>
-          <Link to="/about">About</Link>
-          <Link to="/admin">Admin</Link>
+          <StyledLink to="/your-recipe">Your Recipe</StyledLink>
+          <StyledLink to="/recipes">Oslo Recipes</StyledLink>
+          <StyledLink to="/about">About</StyledLink>
+          <StyledLink to="/admin">Admin</StyledLink>
         </StyledDiv>
       </StyledNav>
     </Flex>
