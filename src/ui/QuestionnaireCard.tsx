@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
+import { questions } from '../util/constants';
+
+let lang = 'en';
 
 const StyledFlex = styled(Flex)`
   width: 365px;
@@ -59,10 +62,21 @@ const BottomRightHolePunch = styled.div`
 `;
 
 const QuestionnaireCard = ({ recipe }) => {
+  let keyCounter = 0;
+  const questionnaireQuestions = questions.en;
   return (
     <StyledFlex direction="column">
       <TopLeftHolePunch /> <TopRightHolePunch />
       <BottomLeftHolePunch /> <BottomRightHolePunch />
+      {Object.entries(questionnaireQuestions).map((question) => {
+        keyCounter += 1;
+        return (
+          <div key={keyCounter}>
+            <div>{question[1]}</div>
+            <div>{recipe[question[0]]}</div>
+          </div>
+        );
+      })}
     </StyledFlex>
   );
 };
