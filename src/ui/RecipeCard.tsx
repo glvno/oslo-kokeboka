@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
 
-const AuthorName = styled.footer`
+const BydelName = styled.footer`
   font-size: 12px;
   line-height: 16px;
   // font-family-sneak;
@@ -75,8 +75,8 @@ const RecipeCard = ({ recipe }) => {
       <TopLeftHolePunch /> <TopRightHolePunch />
       <BottomLeftHolePunch /> <BottomRightHolePunch />
       <RecipeName>{recipe.recipeName}</RecipeName>
-      <footer>Submitted By</footer>
-      <AuthorName>{recipe.author}</AuthorName>
+      <footer>Submitted By {recipe.author}</footer>
+      <BydelName>{recipe.bydel}</BydelName>
     </StyledFlex>
   );
 };

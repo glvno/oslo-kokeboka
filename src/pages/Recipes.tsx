@@ -8,7 +8,7 @@ import Flex from '../ui/Flex';
 
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
-  const [filtered, setFiltered] = useState(false);
+  const [bydelView, setBydelView] = useState(false);
   let keyCounter = 0;
 
   useEffect(() => {
@@ -28,21 +28,23 @@ const Recipes: FC = () => {
             <Button
               type="button"
               label="Bydels"
-              style={filtered ? 'salmon' : 'wine'}
-              onClick={() => setFiltered(!filtered)}
+              style={bydelView ? 'salmon' : 'wine'}
+              onClick={() => setBydelView(!bydelView)}
             />
             <Button
               type="button"
               label="Unsorted"
-              onClick={() => setFiltered(!filtered)}
-              style={filtered ? 'wine' : 'salmon'}
+              onClick={() => setBydelView(!bydelView)}
+              style={bydelView ? 'wine' : 'salmon'}
             />
           </Flex>
 
-          {recipes.map((recipe) => {
-            keyCounter += 1;
-            return <RecipeCard recipe={recipe} key={keyCounter} />;
-          })}
+          {bydelView
+            ? ''
+            : recipes.map((recipe) => {
+                keyCounter += 1;
+                return <RecipeCard recipe={recipe} key={keyCounter} />;
+              })}
         </Flex>
       </main>
     </Page>
