@@ -40,7 +40,10 @@ const Recipes: FC = () => {
               type="button"
               label={bydelFilter || 'Bydels'}
               style={bydelView || bydelFilter ? 'salmon' : 'wine'}
-              onClick={() => setBydelView(!bydelView)}
+              onClick={() => {
+                setBydelView(true);
+                setBydelFilter('');
+              }}
             />
             <Button
               type="button"
