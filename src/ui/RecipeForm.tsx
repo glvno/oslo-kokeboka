@@ -67,9 +67,9 @@ const RecipeForm: FC = () => {
         console.log(parsedValues);
       }}
     >
-      {(props) => {
+      {({ handleSubmit }) => {
         return (
-          <form onSubmit={props.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <Input name="recipeName" placeholder="What is the name of the dish?" />
             <Select
               name="category"
