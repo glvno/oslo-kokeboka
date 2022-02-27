@@ -13,7 +13,7 @@ const BydelName = styled.label`
 
 const StyledFlex = styled(Flex)`
   width: 315px;
-  height: 101px;
+  height: 148px;
   background: var(--recipe-card-background);
   color: #14000f;
   align-items: flex-begin;
@@ -21,7 +21,7 @@ const StyledFlex = styled(Flex)`
   gap: 10px;
   margin-bottom: 10px;
   letter-spacing: 0.01em;
-  justify-content: space-around;
+  justify-content: space-between;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
