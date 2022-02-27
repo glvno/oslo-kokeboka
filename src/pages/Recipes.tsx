@@ -5,6 +5,8 @@ import recipeService from '../services/recipe';
 import RecipeCard from '../ui/RecipeCard';
 import Button from '../ui/form/Button';
 import Flex from '../ui/Flex';
+import { bydels } from '../util/constants';
+import BydelCard from '../ui/BydelCard';
 
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
@@ -40,8 +42,14 @@ const Recipes: FC = () => {
           </Flex>
 
           {bydelView
-            ? ''
+            ? bydels.map((bydel) => {
+                const bydelRecipes = recipes.filter((recipe) => recipe.bydel === bydel);
+                const recipeCount = bydelRecipes.length;
+                keyCounter += 1;
+                return <BydelCard bydel={bydel} count={recipeCount} key={keyCounter} />;
+              })
             : recipes.map((recipe) => {
+                console.log(recipe);
                 keyCounter += 1;
                 return <RecipeCard recipe={recipe} key={keyCounter} />;
               })}

@@ -9,24 +9,7 @@ import TextArea from './form/TextArea';
 import Button from './form/Button';
 import { object, string, array, bool, addMethod } from 'yup';
 import recipeService from '../services/recipe';
-
-const bydels = [
-  'Alna',
-  'Bjerke',
-  'Frogner',
-  'Gamle Oslo',
-  'Grorud',
-  'Grünerløkka',
-  'Nordre Aker',
-  'Nordstrand',
-  'Sagene',
-  'St. Hanshaugen',
-  'Stovner',
-  'Søndre Nordstrand',
-  'Ullern',
-  'Vestre Aker',
-  'Østensjø',
-];
+import { bydels } from '../util/constants';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
