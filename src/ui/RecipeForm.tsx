@@ -7,7 +7,7 @@ import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './form/TextArea';
 import Button from './form/Button';
-import { object, string, array, bool } from 'yup';
+import { object, string, array, bool, addMethod } from 'yup';
 import recipeService from '../services/recipe';
 
 const bydels = [
@@ -30,12 +30,16 @@ const bydels = [
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
+addMethod(string, 'replaceEmptyName', function () {
+  return this.transform((value) => (value === '' ? 'Anonymous' : value));
+});
+
 const formValueSchema = object({
   recipeName: string().max(250).required(),
   bydel: string().required(),
   category: string(),
   story: string().max(1500),
-  author: string(),
+  author: string().replaceEmptyName(),
   prepTime: object({ hours: string(), minutes: string() }),
   ingredients: array(
     object({

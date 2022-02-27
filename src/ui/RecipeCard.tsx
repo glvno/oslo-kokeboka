@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Flex from '../Flex';
+import Flex from './Flex';
 
 const AuthorName = styled.footer`
   font-size: 12px;
@@ -16,7 +16,7 @@ const StyledFlex = styled(Flex)`
   height: 101px;
   background: var(--recipe-card-background);
   color: #14000f;
-  align-items: center;
+  align-items: flex-begin;
   padding: 20px;
   gap: 10px;
   margin-bottom: 10px;
@@ -70,10 +70,9 @@ const BottomRightHolePunch = styled.div`
 `;
 
 const RecipeCard = ({ recipe }) => {
-  const nothing = null;
   return (
     <StyledFlex direction="column">
-      <TopLeftHolePunch top="33%" /> <TopRightHolePunch />
+      <TopLeftHolePunch /> <TopRightHolePunch />
       <BottomLeftHolePunch /> <BottomRightHolePunch />
       <RecipeName>{recipe.recipeName}</RecipeName>
       <footer>Submitted By</footer>

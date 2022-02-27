@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import Page from '../ui/Page';
 import recipeService from '../services/recipe';
-import RecipeCard from '../ui/form/RecipeCard';
+import RecipeCard from '../ui/RecipeCard';
 import Button from '../ui/form/Button';
 import Flex from '../ui/Flex';
 
