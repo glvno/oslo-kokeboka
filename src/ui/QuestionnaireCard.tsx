@@ -71,10 +71,10 @@ const QuestionnaireCard = ({ recipe }) => {
       {Object.entries(questionnaireQuestions).map((question) => {
         keyCounter += 1;
         return (
-          <div key={keyCounter}>
-            <div>{question[1]}</div>
-            <div>{recipe[question[0]]}</div>
-          </div>
+          <dl key={keyCounter}>
+            <dt>{question[1]}</dt>
+            <dd>{recipe[question[0]]}</dd>
+          </dl>
         );
       })}
     </StyledFlex>

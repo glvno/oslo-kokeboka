@@ -9,7 +9,6 @@ import QuestionnaireCard from '../ui/QuestionnaireCard';
 const Recipe = () => {
   const [recipe, setRecipe] = useState({});
   const { id } = useParams();
-  console.log(useParams());
 
   useEffect(() => {
     const getRecipe = async (id) => {
@@ -20,7 +19,6 @@ const Recipe = () => {
   }, []);
   return (
     <Page title={'Oslo Recipes'}>
-      {JSON.stringify(recipe, null, 2)}
       <RecipeTitleCard recipe={recipe} />
       <QuestionnaireCard recipe={recipe} />
     </Page>
