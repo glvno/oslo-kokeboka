@@ -10,6 +10,7 @@ import Button from './form/Button';
 import { object, string, array, bool, addMethod } from 'yup';
 import recipeService from '../services/recipe';
 import { bydels } from '../util/constants';
+import { useNavigate } from 'react-router-dom';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
@@ -41,7 +42,10 @@ const formValueSchema = object({
 });
 
 const RecipeForm: FC = () => {
-  //TODO: convert strings in ary to objs for label/id purposes
+  const navigate = useNavigate();
+  const goToRecipePage = (id) => {
+    navigate(`/recipe/${id}`);
+  };
   return (
     <Formik
       initialValues={{
@@ -63,7 +67,8 @@ const RecipeForm: FC = () => {
       }}
       onSubmit={async (values) => {
         const parsedValues = await formValueSchema.validate(values);
-        recipeService.create(parsedValues);
+        const response = await recipeService.create(parsedValues);
+        goToRecipePage(response.id);
         console.log(parsedValues);
       }}
     >
