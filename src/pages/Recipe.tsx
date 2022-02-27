@@ -4,6 +4,7 @@ import Page from '../ui/Page';
 import Flex from '../ui/Flex';
 import recipeService from '../services/recipe';
 import RecipeTitleCard from '../ui/RecipeTitleCard';
+import QuestionnaireCard from '../ui/QuestionnaireCard';
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState({});
@@ -21,6 +22,7 @@ const Recipe = () => {
     <Page title={'Oslo Recipes'}>
       {JSON.stringify(recipe, null, 2)}
       <RecipeTitleCard recipe={recipe} />
+      <QuestionnaireCard recipe={recipe} />
     </Page>
   );
 };
