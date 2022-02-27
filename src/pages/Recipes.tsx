@@ -15,7 +15,7 @@ const Recipes: FC = () => {
   const [bydelFilter, setBydelFilter] = useState('');
 
   let keyCounter = 0;
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getRecipes = async () => {
