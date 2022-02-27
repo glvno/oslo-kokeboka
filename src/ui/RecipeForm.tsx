@@ -99,18 +99,18 @@ const RecipeForm: FC = () => {
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
             />
-            Time to prepare: <InputPrepTime name="prepTime" />
+            <InputPrepTime name="prepTime" />
             <Ingredients />
             <DirectionsBox />
             <TextArea name="notes" placeholder="Any additional notes go here!" />
-            <input
+            {/* <input
               id="file"
               name="file"
               type="file"
               onChange={(event) => {
                 props.setFieldValue('file', event.currentTarget.files[0]);
               }}
-            />
+            /> */}
             <Input name="email" placeholder="Email" />{' '}
             <label>
               <Field type="checkbox" name="contact" /> Would you be open to sharing the story behind

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { FC, useState } from 'react';
+import Flex from './Flex';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -61,7 +62,7 @@ const StyledDiv = styled.div`
 const Header: FC<{ title: string }> = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <>
+    <Flex width="100%" direction="column" justify="space-between" align="stretch">
       <StyledHeader>Oslo Kokeboka</StyledHeader>
 
       <StyledNav>
@@ -78,7 +79,7 @@ const Header: FC<{ title: string }> = ({ title }) => {
           <Link to="/admin">Admin</Link>
         </StyledDiv>
       </StyledNav>
-    </>
+    </Flex>
   );
 };
 

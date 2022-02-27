@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 const Page = ({ title, children }) => (
-  <Flex direction="column" maxWidth="500px" justify="space-between" align="space-between">
+  <Flex direction="column" maxWidth="500px" justify="space-between" align="center">
     <Header title={title} />
     <StyledDiv>{children}</StyledDiv>
   </Flex>
