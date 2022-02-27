@@ -6,7 +6,7 @@ const StyledDiv = styled.div`
   position: absolute;
   top: 130px;
   z-index: -1;
-  margin-left: 2vw;
+  max-width: 315px;
 `;
 
 const Page = ({ title, children }) => (

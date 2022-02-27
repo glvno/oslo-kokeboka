@@ -53,6 +53,7 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         }}
       />
       <Button
+        style="small"
         isDisabled={buttonDisabled}
         type="button"
         label="+"

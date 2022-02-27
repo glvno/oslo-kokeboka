@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import Page from '../ui/Page';
 import recipeService from '../services/recipe';
 import RecipeCard from '../ui/form/RecipeCard';
+import Button from '../ui/form/Button';
+import Flex from '../ui/Flex';
 
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
@@ -18,10 +20,18 @@ const Recipes: FC = () => {
   }, []);
   return (
     <Page title="Oslo Recipes">
-      {recipes.map((recipe) => {
-        keyCounter += 1;
-        return <RecipeCard recipe={recipe} key={keyCounter} />;
-      })}
+      <main>
+        Here you can view recipes either assorted by area or as a simple list from all across the
+        city.
+        <Flex gap="10px" padding="24px 0px 24px">
+          <Button type="button" label="Bydels" />
+          <Button type="button" label="Unsorted" style="salmon" />
+        </Flex>
+        {recipes.map((recipe) => {
+          keyCounter += 1;
+          return <RecipeCard recipe={recipe} key={keyCounter} />;
+        })}
+      </main>
     </Page>
   );
 };
