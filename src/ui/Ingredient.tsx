@@ -4,6 +4,7 @@ import Input from './form/Input';
 import styled from '@emotion/styled';
 import { FC, useState } from 'react';
 import Button from './form/Button';
+import ErrorLabel from './form/ErrorLabel';
 
 const StyledDiv = styled.div`
   color: var(--text);
@@ -11,18 +12,17 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-left;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 10px;
+  // align-items: flex-start;
+  margin-bottom: 20px;
 `;
 
 const StyledField = styled(Field)`
   border-radius: 0px;
   border-bottom: 1px var(--text) solid;
-  height: 40px;
+  height: 51px;
   width: 10%;
   padding-left: 10px;
   background: var(--input-background);
-  margin-bottom: 10px;
   color: var(--text);
 `;
 
@@ -36,6 +36,7 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   const [hasMinusButton, setHasMinusButton] = useState(false);
   return (
     <StyledDiv>
+      {' '}
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
       <Select
         placeholder="units"

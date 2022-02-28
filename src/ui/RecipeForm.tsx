@@ -11,6 +11,7 @@ import { object, string, array, bool, addMethod } from 'yup';
 import recipeService from '../services/recipe';
 import { bydels } from '../util/constants';
 import { useNavigate } from 'react-router-dom';
+import ErrorLabel from './form/ErrorLabel';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
@@ -76,15 +77,21 @@ const RecipeForm: FC = () => {
       {({ handleSubmit }) => {
         return (
           <form onSubmit={handleSubmit}>
+            <ErrorLabel name="recipeName" />
             <Input name="recipeName" placeholder="What is the name of the dish?" />
+            <ErrorLabel name="category" />
             <Select
               name="category"
               options={categories}
               placeholder="What kind of recipe is this?"
             />
+            <ErrorLabel name="author" />
             <Input name="author" placeholder="Tell us your name..." />
+            <ErrorLabel name="bydel" />
             <Select name="bydel" options={bydels} placeholder="Select your area" />
+            <ErrorLabel name="story" />
             <TextArea name="story" placeholder="What makes this dish special to you?" />
+            <ErrorLabel name="yield" />
             <Select
               name="yield"
               placeholder="How many servings does this recipe produce?"
@@ -92,9 +99,12 @@ const RecipeForm: FC = () => {
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
             />
+            <ErrorLabel name="prepTime" />
             <InputPrepTime name="prepTime" />
+            <ErrorLabel name={`ingredients.0.name`} />
             <Ingredients />
             <DirectionsBox />
+            <ErrorLabel name="notes" />
             <TextArea name="notes" placeholder="Any additional notes go here!" />
             {/* <input
               id="file"
@@ -104,6 +114,7 @@ const RecipeForm: FC = () => {
                 props.setFieldValue('file', event.currentTarget.files[0]);
               }}
             /> */}
+            <ErrorLabel name="email" />
             <Input name="email" placeholder="Email" />{' '}
             <label>
               <Field type="checkbox" name="contact" /> Would you be open to sharing the story behind

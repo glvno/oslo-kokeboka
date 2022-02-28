@@ -6,10 +6,9 @@ const StyledField = styled(Field)`
   background: var(--input-background);
   border: 1px var(--text) solid;
   color: var(--text);
-  height: 48px;
+  height: 51px;
   border-radius: 5px;
   padding-left: 10px;
-  margin-bottom: 15px;
 `;
 
 interface SelectProps {
