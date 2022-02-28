@@ -65,6 +65,7 @@ const RecipeForm: FC = () => {
         reviewed: false,
         hidden: false,
       }}
+      validationSchema={formValueSchema}
       onSubmit={async (values) => {
         const parsedValues = await formValueSchema.validate(values);
         const response = await recipeService.create(parsedValues);
