@@ -1,12 +1,11 @@
 import { FC, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Page from '../ui/Page';
-import Flex from '../ui/Flex';
-import recipeService from '../services/recipe';
+import recipeService from '../services/recipes';
 import RecipeTitleCard from '../ui/RecipeTitleCard';
 import QuestionnaireCard from '../ui/QuestionnaireCard';
 
-const Recipe = () => {
+const Recipe: FC = () => {
   const [recipe, setRecipe] = useState({});
   const { id } = useParams();
 

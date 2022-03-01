@@ -64,7 +64,7 @@ const Button: FC<ButtonProps> = ({ label, type, onClick, style = 'wine', isDisab
       );
     case 'ochre':
       return (
-        <OchreButton onClick={onClick} type={type} label={label}>
+        <OchreButton onClick={onClick} type={type}>
           {label}
         </OchreButton>
       );

@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { FC } from 'react';
 
 const Typography: FC = ({ children }) => {

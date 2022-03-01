@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import Flex from './Flex';
 import { questions } from '../util/constants';
 
-let lang = 'en';
-
 const StyledFlex = styled(Flex)`
   width: 365px;
   background: var(--recipe-card-background);

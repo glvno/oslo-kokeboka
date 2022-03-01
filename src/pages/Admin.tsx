@@ -1,3 +1,6 @@
 import { FC } from 'react';
-const Admin: FC = () => <h1>Admin</h1>;
+import Page from '../ui/Page';
+const Admin: FC = () => {
+  return <Page title="Admin"></Page>;
+};
 export default Admin;

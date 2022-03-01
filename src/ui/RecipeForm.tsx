@@ -8,7 +8,7 @@ import DirectionsBox from './DirectionsBox';
 import TextArea from './form/TextArea';
 import Button from './form/Button';
 import { object, string, array, bool, addMethod } from 'yup';
-import recipeService from '../services/recipe';
+import recipeService from '../services/recipes';
 import { bydels } from '../util/constants';
 import { useNavigate } from 'react-router-dom';
 import ErrorLabel from './form/ErrorLabel';
@@ -71,7 +71,6 @@ const RecipeForm: FC = () => {
         const parsedValues = await formValueSchema.validate(values);
         const response = await recipeService.create(parsedValues);
         goToRecipePage(response.id);
-        console.log(parsedValues);
       }}
     >
       {({ handleSubmit }) => {

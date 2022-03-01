@@ -4,7 +4,6 @@ import Input from './form/Input';
 import styled from '@emotion/styled';
 import { FC, useState } from 'react';
 import Button from './form/Button';
-import ErrorLabel from './form/ErrorLabel';
 
 const StyledDiv = styled.div`
   color: var(--text);
