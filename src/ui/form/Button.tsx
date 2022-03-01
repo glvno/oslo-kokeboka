@@ -23,6 +23,16 @@ const WineButton = styled(DefaultButton)`
   background: var(--input-background);
   padding: 10px;
 `;
+const OchreButton = styled(DefaultButton)`
+  background: var(--ochre);
+  padding: 10px;
+  color: var(--background);
+  border-color: var(--background);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  line-height: 122%;
+`;
 
 interface ButtonProps {
   label: string;
@@ -51,6 +61,12 @@ const Button: FC<ButtonProps> = ({ label, type, onClick, style = 'wine', isDisab
         <SmallButton onClick={onClick} type={type} disabled={isDisabled}>
           {label}
         </SmallButton>
+      );
+    case 'ochre':
+      return (
+        <OchreButton onClick={onClick} type={type} label={label}>
+          {label}
+        </OchreButton>
       );
   }
 };

@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import Page from '../ui/Page';
 import styled from '@emotion/styled';
+import Button from '../ui/form/Button';
+import { useNavigate } from 'react-router-dom';
 
 const GreenBar = styled.div`
   position: absolute;
@@ -19,8 +21,8 @@ const SalmonBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 237.23px;
-  top: 290.27px;
+  left: 300.23px;
+  top: 175.27px;
 
   /* SALMON */
 
@@ -34,8 +36,8 @@ const RedBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 167.59px;
-  top: 242.64px;
+  left: 120px;
+  top: 175px;
 
   /* RED */
 
@@ -71,7 +73,7 @@ const PurpleBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 185.53px;
+  left: 140.53px;
   top: 266px;
 
   /* PURPLE */
@@ -95,8 +97,8 @@ const OchreBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 200px;
-  top: 318.21px;
+  left: 275px;
+  top: 280.21px;
 
   /* OCHRE */
 
@@ -107,35 +109,61 @@ const PinkBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 245.15px;
-  top: 383px;
+  left: 175.15px;
+  top: 350px;
 
   /* PINK */
 
   background: #ebbfcf;
   transform: rotate(82.96deg);
 `;
-const About: FC = () => (
-  <Page title="About">
-    <div>
-      <GreenBar />
-      <SalmonBar />
-      <RedBar />
-      <BlueBar />
-      <WhiteBar />
-      <PurpleBar />
-      <PaperBar />
-      <OchreBar />
-      <PinkBar />
-    </div>
-    <div>
-      Oslo is a small but vibrant, multicultural city, constantly changing, just like the food we
-      eat. Culture is never stagnant and neither are our recipes. In order to move past the complex
-      and ever excluding question of ‘what is Norwegian food.’ I am asking, 'what is Oslo’s food?’
-      To find that answer, I want to know what is the recipe that you connect to most and what are
-      the memories that meal brings forth?
-    </div>
-  </Page>
-);
+
+const StyledDiv = styled.div`
+  position: absolute;
+  top: -160px;
+  left: 0px;
+`;
+const StyledAbout = styled.div`
+  padding-top: 350px;
+`;
+const About: FC = () => {
+  const navigate = useNavigate();
+
+  return (
+    <Page title="About">
+      <StyledDiv>
+        <GreenBar />
+        <SalmonBar />
+        <RedBar />
+        <BlueBar />
+        <WhiteBar />
+        <PurpleBar />
+        <PaperBar />
+        <OchreBar />
+        <PinkBar />
+      </StyledDiv>
+
+      <StyledAbout>
+        Oslo is a small but vibrant, multicultural city, constantly changing, just like the food we
+        eat. Culture is never stagnant and neither are our recipes. In order to move past the
+        complex and ever excluding question of ‘what is Norwegian food.’ I am asking, 'what is
+        Oslo’s food?’
+        <br />
+        <br />
+        To find that answer, I want to know what is the recipe that you connect to most and what are
+        the memories that meal brings forth?
+        <br />
+        <br />
+        <br />
+        <Button
+          onClick={() => navigate('/your-recipe')}
+          style="ochre"
+          label="Submit your recipe!"
+        />
+      </StyledAbout>
+      <br />
+    </Page>
+  );
+};
 
 export default About;
