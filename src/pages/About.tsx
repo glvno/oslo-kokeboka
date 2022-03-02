@@ -123,7 +123,7 @@ const StyledDiv = styled.div`
   top: -160px;
   left: 0px;
 `;
-const StyledAbout = styled.div`
+const StyledAbout = styled.main`
   padding-top: 350px;
 `;
 const About: FC = () => {
