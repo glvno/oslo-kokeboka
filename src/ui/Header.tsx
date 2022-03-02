@@ -33,13 +33,11 @@ const StyledNav = styled.nav`
 
   text-shadow: -1px 1px 0px #14000f;
   text-transform: uppercase;
-  margin-bottom: 10px;
 `;
 
 const StyledDiv = styled.div`
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 20px;
   background: linear-gradient(var(--background), var(--input-background));
   // border: solid var(--text);
   border-width: 0px 0.1px 0.5px 1px;

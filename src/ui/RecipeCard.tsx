@@ -19,7 +19,6 @@ const StyledFlex = styled(Flex)`
   align-items: flex-begin;
   padding: 20px;
   gap: 10px;
-  margin-bottom: 10px;
   letter-spacing: 0.01em;
   justify-content: space-around;
   font-style: normal;

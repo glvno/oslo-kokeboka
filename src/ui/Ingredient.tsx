@@ -11,7 +11,6 @@ const StyledDiv = styled.div`
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  margin-bottom: 10px;
 `;
 
 const StyledField = styled(Field)`

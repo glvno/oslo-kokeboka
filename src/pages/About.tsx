@@ -8,8 +8,8 @@ const GreenBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 222.07px;
-  top: 130px;
+  top: 90px;
+  left: 24px;
 
   /* GREEN */
 
@@ -20,9 +20,9 @@ const GreenBar = styled.div`
 const SalmonBar = styled.div`
   position: absolute;
   width: 6px;
-  height: 112px;
-  left: 300.23px;
-  top: 175.27px;
+  height: 95px;
+  top: 180px;
+  left: 80px;
 
   /* SALMON */
 
@@ -30,51 +30,38 @@ const SalmonBar = styled.div`
   transform: rotate(-134.87deg);
 `;
 
-const RedBar = styled.div`
-  /* Rectangle 47 */
-
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 120px;
-  top: 175px;
-
-  /* RED */
-
-  background: #d04c4c;
-  transform: rotate(105.35deg);
-`;
-
 const BlueBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 131.7px;
-  top: 175px;
+  top: 140px;
+  left: -50px;
 
   /* BLUE */
 
   background: #6594f0;
   transform: rotate(6deg);
 `;
-const WhiteBar = styled.div`
+const RedBar = styled.div`
+  /* Rectangle 47 */
+
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 58px;
-  top: 284.06px;
+  top: 138px;
+  left: -60px;
 
-  /* PAPER */
+  /* RED */
 
-  background: #e9dfd6;
-  transform: rotate(-20.13deg);
+  background: #d04c4c;
+  transform: rotate(105.35deg);
 `;
 const PurpleBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 140.53px;
-  top: 266px;
+  top: 221px;
+  left: -25px;
 
   /* PURPLE */
 
@@ -85,8 +72,8 @@ const PaperBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 58px;
-  top: 284.06px;
+  top: 250px;
+  left: -110px;
 
   /* PAPER */
 
@@ -97,8 +84,8 @@ const OchreBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 275px;
-  top: 280.21px;
+  top: 260px;
+  left: 60px;
 
   /* OCHRE */
 
@@ -109,8 +96,8 @@ const PinkBar = styled.div`
   position: absolute;
   width: 6px;
   height: 112px;
-  left: 175.15px;
-  top: 350px;
+  top: 315px;
+  left: 0px;
 
   /* PINK */
 
@@ -121,11 +108,11 @@ const PinkBar = styled.div`
 const StyledDiv = styled.div`
   position: absolute;
   top: -160px;
-  left: -30px;
+  // left: 50px;
 `;
 const StyledAbout = styled.main`
-  padding-top: 310px;
-  text-align: justify;
+  padding-top: 280px;
+  // text-align: justify;
 `;
 const About: FC = () => {
   const navigate = useNavigate();
@@ -137,7 +124,6 @@ const About: FC = () => {
         <SalmonBar />
         <RedBar />
         <BlueBar />
-        <WhiteBar />
         <PurpleBar />
         <PaperBar />
         <OchreBar />

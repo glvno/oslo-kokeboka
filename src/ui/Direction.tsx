@@ -11,7 +11,6 @@ const StyledDiv = styled.div`
   justify-content: flex-left;
   gap: 10px;
   align-items: flex-start;
-  margin-bottom: 10px;
   padding-bottom: 10px;
 `;
 
