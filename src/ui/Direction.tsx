@@ -34,7 +34,13 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
           setButtonDisabled(arrayHelpers.form.values.directions[index].length > 0 ? false : true);
         }}
       />
-      <Button style="small" type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
+      <Button
+        style="small"
+        isDisabled={!hasMinusButton}
+        type="button"
+        label="-"
+        onClick={() => arrayHelpers.remove(index)}
+      />
       <Button
         type="button"
         label="+"
