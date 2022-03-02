@@ -121,10 +121,11 @@ const PinkBar = styled.div`
 const StyledDiv = styled.div`
   position: absolute;
   top: -160px;
-  left: 0px;
+  left: -30px;
 `;
 const StyledAbout = styled.main`
-  padding-top: 350px;
+  padding-top: 310px;
+  text-align: justify;
 `;
 const About: FC = () => {
   const navigate = useNavigate();

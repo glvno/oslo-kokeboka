@@ -11,6 +11,7 @@ const StyledField = styled(Field)`
   padding-left: 10px;
   margin-bottom: 10px;
   font-family: monospace;
+  width: 100%;
 `;
 
 interface InputPrepTimeProps {

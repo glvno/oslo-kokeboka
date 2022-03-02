@@ -9,10 +9,9 @@ const StyledDiv = styled.div`
   color: var(--text);
   height: 51px;
   display: flex;
-  justify-content: flex-left;
   gap: 10px;
-  // align-items: flex-start;
-  margin-bottom: 20px;
+  align-items: flex-start;
+  margin-bottom: 10px;
 `;
 
 const StyledField = styled(Field)`
@@ -23,6 +22,7 @@ const StyledField = styled(Field)`
   padding-left: 10px;
   background: var(--input-background);
   color: var(--text);
+  box-sizing: border-box;
 `;
 
 interface IngredientProps {
@@ -53,17 +53,19 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         }}
       />
       <Button
+        isDisabled={!hasMinusButton}
+        type="button"
+        style="small"
+        label="-"
+        onClick={() => arrayHelpers.remove(index)}
+      />
+      <Button
         style="small"
         isDisabled={buttonDisabled}
         type="button"
         label="+"
         onClick={() => arrayHelpers.insert(index + 1, { name: '', qty: '', units: '' })}
       />
-      {hasMinusButton ? (
-        <Button type="button" style="small" label="-" onClick={() => arrayHelpers.remove(index)} />
-      ) : (
-        ''
-      )}
     </StyledDiv>
   );
 };

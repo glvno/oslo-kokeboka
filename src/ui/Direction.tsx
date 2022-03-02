@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-left;
   gap: 10px;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 10px;
   padding-bottom: 10px;
 `;
@@ -34,17 +34,14 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
           setButtonDisabled(arrayHelpers.form.values.directions[index].length > 0 ? false : true);
         }}
       />
+      <Button style="small" type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
       <Button
         type="button"
         label="+"
+        style="small"
         isDisabled={buttonDisabled}
         onClick={() => arrayHelpers.insert(index + 1, '')}
       />{' '}
-      {hasMinusButton ? (
-        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
-      ) : (
-        ''
-      )}
     </StyledDiv>
   );
 };

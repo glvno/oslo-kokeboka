@@ -7,15 +7,12 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   top: 130px;
   z-index: -1;
-  max-width: 400px;
-  // border: 1px white dotted;
 `;
 
 const Page = ({ title, children }) => (
-  <Flex direction="column" maxWidth="500px" justify="space-between" align="center">
+  <Flex direction="column" width="100%" maxWidth="500px" align="center">
     <Header title={title} />
     <StyledDiv>{children}</StyledDiv>
   </Flex>
