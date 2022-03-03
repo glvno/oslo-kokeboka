@@ -30,8 +30,6 @@ const OchreButton = styled(DefaultButton)`
   border-color: var(--background);
   font-weight: 600;
   font-size: 17px;
-  letter-spacing: 0.01em;
-  line-height: 122%;
 `;
 
 interface ButtonProps {

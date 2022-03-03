@@ -37,56 +37,56 @@ const Recipes: FC = () => {
 
   return (
     <Page title="Oslo Recipes">
-      <main>
+      <p>
         Here you can view recipes either assorted by area or as a simple list from all across the
         city.
-        <Flex direction="column" align="center">
-          <Flex gap="10px" padding="24px 0px 24px">
-            <Button
-              type="button"
-              label={bydelFilter || 'Bydels'}
-              style={bydelView || bydelFilter ? 'salmon' : 'wine'}
-              onClick={() => {
-                setBydelView(true);
-                setBydelFilter('');
-              }}
-            />
-            <Button
-              type="button"
-              label="Unsorted"
-              onClick={() => {
-                setBydelView(false);
-                setBydelFilter('');
-              }}
-              style={bydelView || bydelFilter !== '' ? 'wine' : 'salmon'}
-            />
-          </Flex>
-
-          {bydelView
-            ? bydels.map((bydel) => {
-                const bydelRecipes = recipes.filter((recipe) => recipe.bydel === bydel);
-                keyCounter += 1;
-                return (
-                  <BydelCard
-                    bydel={bydel}
-                    bydelRecipes={bydelRecipes}
-                    key={keyCounter}
-                    handleBydelClick={handleBydelClick}
-                  />
-                );
-              })
-            : filteredRecipes.map((recipe) => {
-                keyCounter += 1;
-                return (
-                  <RecipeCard
-                    recipe={recipe}
-                    key={keyCounter}
-                    handleRecipeClick={handleRecipeClick}
-                  />
-                );
-              })}
+      </p>
+      <Flex direction="column" align="center">
+        <Flex gap="10px" padding="24px 0px 24px">
+          <Button
+            type="button"
+            label={bydelFilter || 'Bydels'}
+            style={bydelView || bydelFilter ? 'salmon' : 'wine'}
+            onClick={() => {
+              setBydelView(true);
+              setBydelFilter('');
+            }}
+          />
+          <Button
+            type="button"
+            label="Unsorted"
+            onClick={() => {
+              setBydelView(false);
+              setBydelFilter('');
+            }}
+            style={bydelView || bydelFilter !== '' ? 'wine' : 'salmon'}
+          />
         </Flex>
-      </main>
+
+        {bydelView
+          ? bydels.map((mapBydel) => {
+              const bydelRecipes = recipes.filter(({ bydel }) => bydel === mapBydel);
+              keyCounter += 1;
+              return (
+                <BydelCard
+                  bydel={mapBydel}
+                  bydelRecipes={bydelRecipes}
+                  key={keyCounter}
+                  handleBydelClick={handleBydelClick}
+                />
+              );
+            })
+          : filteredRecipes.map((recipe) => {
+              keyCounter += 1;
+              return (
+                <RecipeCard
+                  recipe={recipe}
+                  key={keyCounter}
+                  handleRecipeClick={handleRecipeClick}
+                />
+              );
+            })}
+      </Flex>
     </Page>
   );
 };

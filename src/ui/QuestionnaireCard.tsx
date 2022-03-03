@@ -15,7 +15,6 @@ const StyledFlex = styled(Flex)`
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
-  line-height: 122%;
   border-radius: 5px;
 `;
 

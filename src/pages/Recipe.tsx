@@ -7,7 +7,7 @@ import QuestionnaireCard from '../ui/QuestionnaireCard';
 
 const Recipe: FC = () => {
   const [recipe, setRecipe] = useState({});
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     const getRecipe = async (id) => {
@@ -16,6 +16,7 @@ const Recipe: FC = () => {
     };
     getRecipe(id);
   }, []);
+
   return (
     <Page title={'Oslo Recipes'}>
       <RecipeTitleCard recipe={recipe} />

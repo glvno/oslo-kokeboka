@@ -3,7 +3,6 @@ import Flex from './Flex';
 
 const BydelNumber = styled.footer`
   font-size: 12px;
-  line-height: 16px;
   // font-family-sneak;
 `;
 
@@ -25,7 +24,6 @@ const StyledFlex = styled(Flex)`
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
-  line-height: 122%;
   border-radius: 5px;
 `;
 

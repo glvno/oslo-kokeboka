@@ -1,30 +1,26 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
 
-const StyledFooter = styled.footer`
+const AuthorLabel = styled.label`
   display: flex;
-  gap: 8px;
+  gap: 0.6rem;
 `;
 
-const BydelName = styled.footer`
+const BydelName = styled.label`
   font-size: 17px;
-  line-height: 20.74px;
   font-weight: 600;
-  // font-family-sneak;
 `;
 
 const RecipeName = styled.label`
   font-weight: 600;
   text-transform: uppercase;
   font-size: 30px;
-  line-height: 34.2px;
 `;
 const AuthorName = styled.label`
   width: 277px;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 30px;
-  line-height: 34.2px;
   vertical-align: center;
 `;
 
@@ -42,7 +38,6 @@ const StyledFlex = styled(Flex)`
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
-  line-height: 122%;
   border-radius: 5px;
 `;
 
@@ -89,12 +84,14 @@ const BottomRightHolePunch = styled.div`
 const RecipeCard = ({ recipe }) => {
   return (
     <StyledFlex direction="column">
-      <TopLeftHolePunch /> <TopRightHolePunch />
-      <BottomLeftHolePunch /> <BottomRightHolePunch />
+      <TopLeftHolePunch />
+      <TopRightHolePunch />
+      <BottomLeftHolePunch />
+      <BottomRightHolePunch />
       <RecipeName>{recipe.recipeName}</RecipeName>
-      <StyledFooter>
+      <AuthorLabel>
         BY <AuthorName>{recipe.author}</AuthorName>
-      </StyledFooter>
+      </AuthorLabel>
       <BydelName>{recipe.bydel}</BydelName>
     </StyledFlex>
   );

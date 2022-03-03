@@ -13,7 +13,6 @@ const StyledHeader = styled.header`
   font-size: 30px;
   padding-top: 25px;
   padding-left: 25px;
-  line-height: 114%;
   /* or 34px */
 
   letter-spacing: 0.01em;
@@ -24,7 +23,6 @@ const StyledNav = styled.nav`
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
-  line-height: 114%;
   display: flex;
   /* or 34px */
 
