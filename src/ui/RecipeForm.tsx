@@ -105,14 +105,6 @@ const RecipeForm: FC = () => {
             <DirectionsBox />
             <ErrorLabel name="notes" />
             <TextArea name="notes" placeholder="Any additional notes go here!" />
-            {/* <input
-              id="file"
-              name="file"
-              type="file"
-              onChange={(event) => {
-                props.setFieldValue('file', event.currentTarget.files[0]);
-              }}
-            /> */}
             <ErrorLabel name="email" />
             <Input name="email" placeholder="Email" />{' '}
             <label>

@@ -11,7 +11,6 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-left;
   gap: 10px;
-  // align-items: flex-start;
   margin-bottom: 20px;
 `;
 
@@ -35,7 +34,6 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
   const [hasMinusButton, setHasMinusButton] = useState(false);
   return (
     <StyledDiv>
-      {' '}
       <StyledField min="0" placeholder="1" type="number" name={`ingredients.${index}.qty`} />
       <Select
         placeholder="units"

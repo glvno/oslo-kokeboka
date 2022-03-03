@@ -11,7 +11,6 @@ const StyledMain = styled.main`
   top: 130px;
   z-index: -1;
   max-width: 400px;
-  // border: 1px white dotted;
 `;
 
 const Page = ({ title, children }) => (

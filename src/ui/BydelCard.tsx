@@ -3,7 +3,6 @@ import Flex from './Flex';
 
 const BydelNumber = styled.footer`
   font-size: 12px;
-  // font-family-sneak;
 `;
 
 const BydelName = styled.label`
@@ -28,13 +27,12 @@ const StyledFlex = styled(Flex)`
 `;
 
 const BydelCard = ({ bydel, bydelRecipes, handleBydelClick }) => {
-  const count = bydelRecipes.length;
   return (
     <button onClick={() => handleBydelClick(bydel)}>
       <StyledFlex direction="column">
         <BydelName>{bydel}</BydelName>
         <BydelNumber>
-          {count} {count === 1 ? 'recipe' : 'recipes'}{' '}
+          {bydelRecipes.length} {bydelRecipes.length === 1 ? 'recipe' : 'recipes'}{' '}
         </BydelNumber>
       </StyledFlex>
     </button>

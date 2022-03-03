@@ -34,7 +34,6 @@ const StyledFlex = styled(Flex)`
   gap: 10px;
   margin-bottom: 10px;
   letter-spacing: 0.01em;
-  justify-content: space-around;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
@@ -81,18 +80,18 @@ const BottomRightHolePunch = styled.div`
   right: -5px;
 `;
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe: { title, bydel, author } }) => {
   return (
-    <StyledFlex direction="column">
+    <StyledFlex justify="space-around" direction="column">
       <TopLeftHolePunch />
       <TopRightHolePunch />
       <BottomLeftHolePunch />
       <BottomRightHolePunch />
-      <title>{recipe.title}</title>
+      <title>{title}</title>
       <AuthorLabel>
-        BY <AuthorName>{recipe.author}</AuthorName>
+        BY <AuthorName>{author}</AuthorName>
       </AuthorLabel>
-      <BydelName>{recipe.bydel}</BydelName>
+      <BydelName>{bydel}</BydelName>
     </StyledFlex>
   );
 };
