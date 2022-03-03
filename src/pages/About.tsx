@@ -5,6 +5,24 @@ import Button from '../ui/form/Button';
 import { useNavigate } from 'react-router-dom';
 import Flex from '../ui/Flex';
 
+interface BarProps {
+  left: string;
+  top: string;
+  rotate: string;
+  color: 'green' | 'salmon' | 'red' | 'blue' | 'paper' | 'purple' | 'ochre' | 'pink';
+}
+
+const Bar = styled.div<BarProps>`
+  position: absolute;
+  width: 6px;
+  height: 112px;
+
+  left: ${({ left }) => left};
+  rotate: transform(${({ rotate }) => rotate}deg);
+  top: ${({ top }) => top};
+  background: ${({ color }) => color};
+`;
+
 const GreenBar = styled.div`
   position: absolute;
   width: 6px;
@@ -21,9 +39,6 @@ const SalmonBar = styled.div`
   height: 112px;
   left: 300.23px;
   top: 175.27px;
-
-  /* SALMON */
-
   background: var(--salmon);
   transform: rotate(-134.87deg);
 `;
@@ -36,9 +51,6 @@ const RedBar = styled.div`
   height: 112px;
   left: 120px;
   top: 175px;
-
-  /* RED */
-
   background: var(--red);
   transform: rotate(105.35deg);
 `;
@@ -49,23 +61,8 @@ const BlueBar = styled.div`
   height: 112px;
   left: 131.7px;
   top: 175px;
-
-  /* BLUE */
-
   background: var(--blue);
   transform: rotate(6deg);
-`;
-const WhiteBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 58px;
-  top: 284.06px;
-
-  /* PAPER */
-
-  background: #e9dfd6;
-  transform: rotate(-20.13deg);
 `;
 const PurpleBar = styled.div`
   position: absolute;
@@ -73,10 +70,7 @@ const PurpleBar = styled.div`
   height: 112px;
   left: 140.53px;
   top: 266px;
-
-  /* PURPLE */
-
-  background: #785997;
+  background: var(--purple);
   transform: rotate(35.81deg);
 `;
 const PaperBar = styled.div`
@@ -88,7 +82,7 @@ const PaperBar = styled.div`
 
   /* PAPER */
 
-  background: #e9dfd6;
+  background: var(--paper);
   transform: rotate(-20.13deg);
 `;
 const OchreBar = styled.div`
@@ -97,10 +91,7 @@ const OchreBar = styled.div`
   height: 112px;
   left: 275px;
   top: 280.21px;
-
-  /* OCHRE */
-
-  background: #f5bf57;
+  background: var(--ochre);
   transform: rotate(-60.22deg);
 `;
 const PinkBar = styled.div`
@@ -109,10 +100,7 @@ const PinkBar = styled.div`
   height: 112px;
   left: 175.15px;
   top: 350px;
-
-  /* PINK */
-
-  background: #ebbfcf;
+  background: var(--pink);
   transform: rotate(82.96deg);
 `;
 
@@ -134,7 +122,6 @@ const About: FC = () => {
         <SalmonBar />
         <RedBar />
         <BlueBar />
-        <WhiteBar />
         <PurpleBar />
         <PaperBar />
         <OchreBar />
