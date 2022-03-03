@@ -9,7 +9,7 @@ interface BarProps {
   left: string;
   top: string;
   rotate: string;
-  color: 'green' | 'salmon' | 'red' | 'blue' | 'paper' | 'purple' | 'ochre' | 'pink';
+  background: 'green' | 'salmon' | 'red' | 'blue' | 'paper' | 'purple' | 'ochre' | 'pink';
 }
 
 const Bar = styled.div<BarProps>`
@@ -18,90 +18,9 @@ const Bar = styled.div<BarProps>`
   height: 112px;
 
   left: ${({ left }) => left};
-  rotate: transform(${({ rotate }) => rotate}deg);
+  transform: rotate(${({ rotate }) => rotate}deg);
   top: ${({ top }) => top};
-  background: ${({ color }) => color};
-`;
-
-const GreenBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 222.07px;
-  top: 130px;
-  background: var(--green);
-  transform: rotate(3.62deg);
-`;
-
-const SalmonBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 300.23px;
-  top: 175.27px;
-  background: var(--salmon);
-  transform: rotate(-134.87deg);
-`;
-
-const RedBar = styled.div`
-  /* Rectangle 47 */
-
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 120px;
-  top: 175px;
-  background: var(--red);
-  transform: rotate(105.35deg);
-`;
-
-const BlueBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 131.7px;
-  top: 175px;
-  background: var(--blue);
-  transform: rotate(6deg);
-`;
-const PurpleBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 140.53px;
-  top: 266px;
-  background: var(--purple);
-  transform: rotate(35.81deg);
-`;
-const PaperBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 58px;
-  top: 284.06px;
-
-  /* PAPER */
-
-  background: var(--paper);
-  transform: rotate(-20.13deg);
-`;
-const OchreBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 275px;
-  top: 280.21px;
-  background: var(--ochre);
-  transform: rotate(-60.22deg);
-`;
-const PinkBar = styled.div`
-  position: absolute;
-  width: 6px;
-  height: 112px;
-  left: 175.15px;
-  top: 350px;
-  background: var(--pink);
-  transform: rotate(82.96deg);
+  background: var(--${({ background }) => background});
 `;
 
 const StyledDiv = styled.div`
@@ -118,14 +37,14 @@ const About: FC = () => {
   return (
     <Page title="About">
       <StyledDiv>
-        <GreenBar />
-        <SalmonBar />
-        <RedBar />
-        <BlueBar />
-        <PurpleBar />
-        <PaperBar />
-        <OchreBar />
-        <PinkBar />
+        <Bar left="220px" top="130px" background="green" rotate="3.62" />
+        <Bar left="300px" top="175px" background="salmon" rotate="-134" />
+        <Bar left="120px" top="175px" background="red" rotate="105.35" />
+        <Bar left="131px" top="175px" background="blue" rotate="6" />
+        <Bar left="140px" top="266px" background="purple" rotate="36" />
+        <Bar left="58px" top="284px" background="paper" rotate="-20" />
+        <Bar left="275px" top="280px" background="ochre" rotate="-60.22" />
+        <Bar left="175px" top="350px" background="pink" rotate="83" />
       </StyledDiv>
 
       <StyledAbout direction="column" gap="30px">
