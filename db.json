@@ -25,7 +25,7 @@
       "story": "",
       "category": "",
       "bydel": "Søndre Nordstrand",
-      "recipeName": "Spaghetti a la Mode",
+      "title": "Spaghetti a la Mode",
       "yield": 0,
       "id": 1
     },
@@ -54,7 +54,7 @@
       "story": "",
       "category": "",
       "bydel": "Frogner",
-      "recipeName": "Flamin' Hot Cheetos",
+      "title": "Flamin' Hot Cheetos",
       "yield": 0,
       "id": 2
     },
@@ -83,7 +83,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "Turkey soup",
+      "title": "Turkey soup",
       "yield": 0,
       "id": 3
     },
@@ -112,7 +112,7 @@
       "story": "",
       "category": "",
       "bydel": "Bjerke",
-      "recipeName": "Chicken",
+      "title": "Chicken",
       "yield": 0,
       "id": 4
     },
@@ -141,7 +141,7 @@
       "story": "It's juicy",
       "category": "Entree",
       "bydel": "Frogner",
-      "recipeName": "Butts",
+      "title": "Butts",
       "yield": "1",
       "object Object": {
         "hours": 2,
@@ -174,7 +174,7 @@
       "story": "",
       "category": "",
       "bydel": "Bjerke",
-      "recipeName": "sadfsdafsadf",
+      "title": "sadfsdafsadf",
       "yield": 0,
       "id": 6
     },
@@ -203,7 +203,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 7
     },
@@ -232,7 +232,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 8
     },
@@ -261,7 +261,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 9
     },
@@ -290,7 +290,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 10
     },
@@ -319,7 +319,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 11
     },
@@ -348,7 +348,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 12
     },
@@ -377,7 +377,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 13
     },
@@ -406,7 +406,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 14
     },
@@ -435,7 +435,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 15
     },
@@ -464,7 +464,7 @@
       "story": "",
       "category": "",
       "bydel": "Gamle Oslo",
-      "recipeName": "asdf",
+      "title": "asdf",
       "yield": 0,
       "id": 16
     },
@@ -493,7 +493,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 17
     },
@@ -522,7 +522,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 18
     },
@@ -551,7 +551,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 19
     },
@@ -580,7 +580,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 20
     },
@@ -609,7 +609,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 21
     },
@@ -638,7 +638,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 22
     },
@@ -667,7 +667,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 23
     },
@@ -696,7 +696,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordstrand",
-      "recipeName": "sdfdsf",
+      "title": "sdfdsf",
       "yield": 0,
       "id": 24
     },
@@ -725,7 +725,7 @@
       "story": "",
       "category": "",
       "bydel": "Nordre Aker",
-      "recipeName": "test router",
+      "title": "test router",
       "yield": 0,
       "id": 25
     }

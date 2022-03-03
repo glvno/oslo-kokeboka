@@ -20,7 +20,7 @@ addMethod(string, 'replaceEmptyName', function () {
 });
 
 const formValueSchema = object({
-  recipeName: string().max(250).required(),
+  title: string().max(250).required(),
   bydel: string().required(),
   category: string(),
   story: string().max(1500),
@@ -50,7 +50,7 @@ const RecipeForm: FC = () => {
   return (
     <Formik
       initialValues={{
-        recipeName: '',
+        title: '',
         bydel: '',
         story: '',
         category: '',
@@ -76,8 +76,8 @@ const RecipeForm: FC = () => {
       {({ handleSubmit }) => {
         return (
           <form onSubmit={handleSubmit}>
-            <ErrorLabel name="recipeName" />
-            <Input name="recipeName" placeholder="What is the name of the dish?" />
+            <ErrorLabel name="title" />
+            <Input name="title" placeholder="What is the name of the dish?" />
             <ErrorLabel name="category" />
             <Select
               name="category"

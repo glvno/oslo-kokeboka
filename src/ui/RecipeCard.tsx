@@ -6,7 +6,7 @@ const BydelName = styled.footer`
   // font-family-sneak;
 `;
 
-const RecipeName = styled.label`
+const title = styled.label`
   font-weight: 600;
 `;
 
@@ -73,7 +73,7 @@ const RecipeCard = ({ recipe, handleRecipeClick }) => {
       <StyledFlex direction="column">
         <TopLeftHolePunch /> <TopRightHolePunch />
         <BottomLeftHolePunch /> <BottomRightHolePunch />
-        <RecipeName>{recipe.recipeName}</RecipeName>
+        <title>{recipe.title}</title>
         <footer>Submitted By {recipe.author}</footer>
         <BydelName>{recipe.bydel}</BydelName>
       </StyledFlex>

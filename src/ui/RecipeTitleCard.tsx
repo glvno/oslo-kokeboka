@@ -11,7 +11,7 @@ const BydelName = styled.label`
   font-weight: 600;
 `;
 
-const RecipeName = styled.label`
+const title = styled.label`
   font-weight: 600;
   text-transform: uppercase;
   font-size: 30px;
@@ -88,7 +88,7 @@ const RecipeCard = ({ recipe }) => {
       <TopRightHolePunch />
       <BottomLeftHolePunch />
       <BottomRightHolePunch />
-      <RecipeName>{recipe.recipeName}</RecipeName>
+      <title>{recipe.title}</title>
       <AuthorLabel>
         BY <AuthorName>{recipe.author}</AuthorName>
       </AuthorLabel>
