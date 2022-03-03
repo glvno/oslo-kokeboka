@@ -42,7 +42,7 @@ const StyledFlex = styled(Flex)`
 
 const TopLeftHolePunch = styled.div`
   position: absolute;
-  background: var(--background);
+  background: var(--darkest-wine);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -52,7 +52,7 @@ const TopLeftHolePunch = styled.div`
 
 const TopRightHolePunch = styled.div`
   position: absolute;
-  background: var(--background);
+  background: var(--darkest-wine);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -62,7 +62,7 @@ const TopRightHolePunch = styled.div`
 
 const BottomLeftHolePunch = styled.div`
   position: absolute;
-  background: var(--background);
+  background: var(--darkest-wine);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -72,7 +72,7 @@ const BottomLeftHolePunch = styled.div`
 
 const BottomRightHolePunch = styled.div`
   position: absolute;
-  background: var(--background);
+  background: var(--darkest-wine);
   width: 10px;
   height: 10px;
   border-radius: 50%;

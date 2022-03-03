@@ -17,13 +17,13 @@
 }
 
 a {
-  color: var(--text);
+  color: var(--salmon);
   text-decoration: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
+  background: var(--darkest-wine);
+  color: var(--salmon);
   /* display: flex; */
   justify-content: space-around;
   font-size: 17px;
@@ -36,5 +36,5 @@ form {
 }
 
 button {
-  color: var(--text);
+  color: var(--salmon);
 }

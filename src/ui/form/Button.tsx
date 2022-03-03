@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 
 const DefaultButton = styled.button`
-  border: 1px var(--text) solid;
+  border: 1px var(--salmon) solid;
   border-radius: 5px;
   &:disabled {
     opacity: 0.2;
@@ -14,20 +14,20 @@ const SmallButton = styled(DefaultButton)`
 `;
 
 const SalmonButton = styled(DefaultButton)`
-  background: var(--text);
-  color: var(--background);
+  background: var(--salmon);
+  color: var(--darkest-wine);
   padding: 10px;
 `;
 
 const WineButton = styled(DefaultButton)`
-  background: var(--input-background);
+  background: var(--dark-wine);
   padding: 10px;
 `;
 const OchreButton = styled(DefaultButton)`
   background: var(--ochre);
   padding: 10px;
-  color: var(--background);
-  border-color: var(--background);
+  color: var(--darkest-wine);
+  border-color: var(--darkest-wine);
   font-weight: 600;
   font-size: 17px;
 `;

@@ -12,7 +12,7 @@ const BydelName = styled.label`
 const StyledFlex = styled(Flex)`
   width: 315px;
   height: 148px;
-  background: var(--recipe-card-background);
+  background: var(--paper);
   color: #14000f;
   align-items: flex-begin;
   padding: 20px;

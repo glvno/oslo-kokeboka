@@ -2,10 +2,14 @@
   /* todo: rename vars to salmon, pink, wine, ochre, etc */
   --black: #000000;
   --white: #ffffff;
-  --text: #ff8585;
-  --background: #14000f;
-  --input-background: #24021a;
-  --recipe-card-background: #e9dfd6;
+  --salmon: #ff8585;
+  --darkest-wine: #14000f;
+  --dark-wine: #24021a;
+  --paper: #e9dfd6;
   --pink: #ebbfcf;
   --ochre: #f5bf57;
+  --green: #40993e;
+  --red: #d04c4c;
+  --blue: #6594f0;
+  --purple: #785997;
 }

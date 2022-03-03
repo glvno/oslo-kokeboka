@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { FC, useEffect } from 'react';
 
 const StyledField = styled(Field)`
-  background: var(--input-background);
-  border-bottom: 1px var(--text) solid;
-  color: var(--text);
+  background: var(--dark-wine);
+  border-bottom: 1px var(--salmon) solid;
+  color: var(--salmon);
   height: 51px;
   padding-left: 10px;
   margin-bottom: 10px;
@@ -14,7 +14,7 @@ const StyledField = styled(Field)`
   flex-grow: 1;
   flex-basis:200px;
   &::placeholder {
-    color: var(--text);;
+    color: var(--salmon);;
 `;
 
 interface TextAreaProps {

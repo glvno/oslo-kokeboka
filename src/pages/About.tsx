@@ -3,6 +3,7 @@ import Page from '../ui/Page';
 import styled from '@emotion/styled';
 import Button from '../ui/form/Button';
 import { useNavigate } from 'react-router-dom';
+import Flex from '../ui/Flex';
 
 const GreenBar = styled.div`
   position: absolute;
@@ -10,10 +11,7 @@ const GreenBar = styled.div`
   height: 112px;
   left: 222.07px;
   top: 130px;
-
-  /* GREEN */
-
-  background: #40993e;
+  background: var(--green);
   transform: rotate(3.62deg);
 `;
 
@@ -26,7 +24,7 @@ const SalmonBar = styled.div`
 
   /* SALMON */
 
-  background: #ff8585;
+  background: var(--salmon);
   transform: rotate(-134.87deg);
 `;
 
@@ -41,7 +39,7 @@ const RedBar = styled.div`
 
   /* RED */
 
-  background: #d04c4c;
+  background: var(--red);
   transform: rotate(105.35deg);
 `;
 
@@ -54,7 +52,7 @@ const BlueBar = styled.div`
 
   /* BLUE */
 
-  background: #6594f0;
+  background: var(--blue);
   transform: rotate(6deg);
 `;
 const WhiteBar = styled.div`
@@ -123,7 +121,7 @@ const StyledDiv = styled.div`
   top: -160px;
   left: 0px;
 `;
-const StyledAbout = styled.p`
+const StyledAbout = styled(Flex)`
   padding-top: 350px;
 `;
 const About: FC = () => {
@@ -143,25 +141,23 @@ const About: FC = () => {
         <PinkBar />
       </StyledDiv>
 
-      <StyledAbout>
-        Oslo is a small but vibrant, multicultural city, constantly changing, just like the food we
-        eat. Culture is never stagnant and neither are our recipes. In order to move past the
-        complex and ever excluding question of ‘what is Norwegian food.’ I am asking, 'what is
-        Oslo’s food?’
-        <br />
-        <br />
-        To find that answer, I want to know what is the recipe that you connect to most and what are
-        the memories that meal brings forth?
-        <br />
-        <br />
-        <br />
+      <StyledAbout direction="column" gap="30px">
+        <p>
+          Oslo is a small but vibrant, multicultural city, constantly changing, just like the food
+          we eat. Culture is never stagnant and neither are our recipes. In order to move past the
+          complex and ever excluding question of ‘what is Norwegian food.’ I am asking, 'what is
+          Oslo’s food?’
+        </p>
+        <p>
+          To find that answer, I want to know what is the recipe that you connect to most and what
+          are the memories that meal brings forth?
+        </p>
         <Button
           onClick={() => navigate('/your-recipe')}
           style="ochre"
           label="Submit your recipe!"
         />
       </StyledAbout>
-      <br />
     </Page>
   );
 };

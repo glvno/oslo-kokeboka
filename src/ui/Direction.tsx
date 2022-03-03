@@ -5,7 +5,7 @@ import { FC, useState } from 'react';
 import Button from './form/Button';
 
 const StyledDiv = styled.div`
-  color: var(--text);
+  color: var(--salmon);
   height: 51px;
   display: flex;
   justify-content: flex-left;

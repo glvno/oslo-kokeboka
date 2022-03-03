@@ -6,7 +6,7 @@ import Flex from './Flex';
 const StyledHeader = styled.header`
   width: 100%;
   height: 30px;
-  background-color: var(--background);
+  background-color: var(--darkest-wine);
   font-weight: 600;
   font-style: normal;
   font-weight: 600;
@@ -41,26 +41,26 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: flex-end;
   margin-right: 20px;
-  background: linear-gradient(var(--background), var(--input-background));
-  // border: solid var(--text);
+  background: linear-gradient(var(--darkest-wine), var(--dark-wine));
+  // border: solid var(--salmon);
   border-width: 0px 0.1px 0.5px 1px;
   padding: 5px;
-  // box-shadow: -10px 10px 15px var(--background);
+  // box-shadow: -10px 10px 15px var(--darkest-wine);
   a {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     &:hover {
-      background: #ff8585;
-      color: var(--background);
+      background: var(--salmon);
+      color: var(--darkest-wine);
     }
   }
 `;
 
 const StyledLink = styled(Link)`
-  border: 0.5px var(--text) solid;
+  border: 0.5px var(--salmon) solid;
   padding: 5px;
-  background: var(--input-background);
+  background: var(--dark-wine);
 `;
 
 const Header: FC<{ title: string }> = ({ title }) => {

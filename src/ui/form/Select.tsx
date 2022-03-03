@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 const StyledField = styled(Field)`
-  background: var(--input-background);
-  border: 1px var(--text) solid;
-  color: var(--text);
+  background: var(--dark-wine);
+  border: 1px var(--salmon) solid;
+  color: var(--salmon);
   height: 51px;
   border-radius: 5px;
   padding-left: 10px;

@@ -6,7 +6,7 @@ import { FC, useState } from 'react';
 import Button from './form/Button';
 
 const StyledDiv = styled.div`
-  color: var(--text);
+  color: var(--salmon);
   height: 51px;
   display: flex;
   justify-content: flex-left;
@@ -16,12 +16,12 @@ const StyledDiv = styled.div`
 
 const StyledField = styled(Field)`
   border-radius: 0px;
-  border-bottom: 1px var(--text) solid;
+  border-bottom: 1px var(--salmon) solid;
   height: 51px;
   width: 10%;
   padding-left: 10px;
-  background: var(--input-background);
-  color: var(--text);
+  background: var(--dark-wine);
+  color: var(--salmon);
 `;
 
 interface IngredientProps {
