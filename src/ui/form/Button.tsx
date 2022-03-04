@@ -13,14 +13,13 @@ const StyledButton = styled.button<StyledButtonProps>`
   font-size: 17px;
   border-width: 1px;
   border-style: solid;
-  
+
   background: var(--${({ background }) => background});
   padding: ${({ padding }) => padding};
   border-color: var(--${({ color }) => color});
   color: var(--${({ color }) => color});
-
-  $:disabled {
-    opacity 0.2;
+  &:disabled {
+    opacity: 0.2;
   }
 `;
 
@@ -28,13 +27,13 @@ interface ButtonProps extends StyledButtonProps {
   label: string;
   onClick: () => void;
   isDisabled?: boolean;
-  type: 'button' | 'submit' | 'reset';
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: FC<ButtonProps> = ({
   label,
   onClick,
-  type,
+  type = 'submit',
   isDisabled = false,
   background = 'ochre',
   padding = '15px',
@@ -53,34 +52,5 @@ const Button: FC<ButtonProps> = ({
     </StyledButton>
   );
 };
-
-// const Button: FC<ButtonProps> = ({ label, type, onClick, style = 'wine', isDisabled = false }) => {
-//   switch (style) {
-//     case 'wine':
-//       return (
-//         <WineButton onClick={onClick} type={type} disabled={isDisabled}>
-//           {label}
-//         </WineButton>
-//       );
-//     case 'salmon':
-//       return (
-//         <SalmonButton onClick={onClick} type={type} disabled={isDisabled}>
-//           {label}
-//         </SalmonButton>
-//       );
-//     case 'small':
-//       return (
-//         <SmallButton onClick={onClick} type={type} disabled={isDisabled}>
-//           {label}
-//         </SmallButton>
-//       );
-//     case 'ochre':
-//       return (
-//         <OchreButton onClick={onClick} type={type}>
-//           {label}
-//         </OchreButton>
-//       );
-//   }
-// };
 
 export default Button;

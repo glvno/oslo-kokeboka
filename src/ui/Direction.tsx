@@ -35,6 +35,7 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
         }}
       />
       <Button
+        padding="5px"
         type="button"
         label="+"
         isDisabled={buttonDisabled}
