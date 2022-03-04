@@ -42,10 +42,8 @@ const StyledDiv = styled.div`
   align-items: flex-end;
   margin-right: 20px;
   background: linear-gradient(var(--darkest-wine), var(--dark-wine));
-  // border: solid var(--salmon);
   border-width: 0px 0.1px 0.5px 1px;
   padding: 5px;
-  // box-shadow: -10px 10px 15px var(--darkest-wine);
   a {
     display: flex;
     justify-content: flex-end;
