@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
+import HolePunch from './HolePunch';
 
 const AuthorLabel = styled.label`
   display: flex;
@@ -11,7 +12,7 @@ const BydelName = styled.label`
   font-weight: 600;
 `;
 
-const title = styled.label`
+const Title = styled.label`
   font-weight: 600;
   text-transform: uppercase;
   font-size: 30px;
@@ -40,54 +41,14 @@ const StyledFlex = styled(Flex)`
   border-radius: 5px;
 `;
 
-const TopLeftHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 40%;
-  left: -5px;
-`;
-
-const TopRightHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 40%;
-  right: -5px;
-`;
-
-const BottomLeftHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 60%;
-  left: -5px;
-`;
-
-const BottomRightHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 60%;
-  right: -5px;
-`;
-
 const RecipeCard = ({ recipe: { title, bydel, author } }) => {
   return (
     <StyledFlex justify="space-around" direction="column">
-      <TopLeftHolePunch />
-      <TopRightHolePunch />
-      <BottomLeftHolePunch />
-      <BottomRightHolePunch />
-      <title>{title}</title>
+      <HolePunch side="left" top="33%" />
+      <HolePunch side="right" top="33%" />
+      <HolePunch side="left" top="66%" />
+      <HolePunch side="right" top="66%" />
+      <Title>{title}</Title>
       <AuthorLabel>
         BY <AuthorName>{author}</AuthorName>
       </AuthorLabel>

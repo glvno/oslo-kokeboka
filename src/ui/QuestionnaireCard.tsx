@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
 import { questions } from '../util/constants';
+import HolePunch from './HolePunch';
 
 const StyledFlex = styled(Flex)`
   width: 365px;
@@ -18,53 +19,15 @@ const StyledFlex = styled(Flex)`
   border-radius: 5px;
 `;
 
-const TopLeftHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 40%;
-  left: -5px;
-`;
-
-const TopRightHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 40%;
-  right: -5px;
-`;
-
-const BottomLeftHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 60%;
-  left: -5px;
-`;
-
-const BottomRightHolePunch = styled.div`
-  position: absolute;
-  background: var(--darkest-wine);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: 60%;
-  right: -5px;
-`;
-
 const QuestionnaireCard = ({ recipe }) => {
   let keyCounter = 0;
   const questionnaireQuestions = questions.en;
   return (
     <StyledFlex direction="column">
-      <TopLeftHolePunch /> <TopRightHolePunch />
-      <BottomLeftHolePunch /> <BottomRightHolePunch />
+      <HolePunch side="left" top="33%" />
+      <HolePunch side="right" top="33%" />
+      <HolePunch side="left" top="66%" />
+      <HolePunch side="right" top="66%" />
       {Object.entries(questionnaireQuestions).map((question) => {
         keyCounter += 1;
         return (

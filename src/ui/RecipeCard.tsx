@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import Flex from './Flex';
+import HolePunch from './HolePunch';
 
 const BydelName = styled.footer`
   font-size: 12px;
   // font-family-sneak;
 `;
 
-const title = styled.label`
+const Title = styled.p`
   font-weight: 600;
 `;
 
@@ -71,9 +72,11 @@ const RecipeCard = ({ recipe, handleRecipeClick }) => {
   return (
     <button onClick={() => handleRecipeClick(recipe.id)}>
       <StyledFlex direction="column">
-        <TopLeftHolePunch /> <TopRightHolePunch />
-        <BottomLeftHolePunch /> <BottomRightHolePunch />
-        <title>{recipe.title}</title>
+        <HolePunch side="left" top="33%" />
+        <HolePunch side="right" top="33%" />
+        <HolePunch side="left" top="66%" />
+        <HolePunch side="right" top="66%" />
+        <Title>{recipe.title}</Title>
         <footer>Submitted By {recipe.author}</footer>
         <BydelName>{recipe.bydel}</BydelName>
       </StyledFlex>
