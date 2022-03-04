@@ -75,7 +75,7 @@ const RecipeForm: FC = () => {
         goToRecipePage(response.id);
       }}
     >
-      {({ handleSubmit, values }) => {
+      {({ handleSubmit }) => {
         return (
           <form onSubmit={handleSubmit}>
             <Input name="title" placeholder="What is the name of the dish?" />
