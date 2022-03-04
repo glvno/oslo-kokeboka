@@ -60,7 +60,7 @@ const About: FC = () => {
         </p>
         <Button
           onClick={() => navigate('/your-recipe')}
-          style="ochre"
+          background="ochre"
           label="Submit your recipe!"
         />
       </StyledAbout>

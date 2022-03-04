@@ -46,7 +46,8 @@ const Recipes: FC = () => {
           <Button
             type="button"
             label={bydelFilter || 'Bydels'}
-            style={bydelView || bydelFilter ? 'salmon' : 'wine'}
+            background={bydelView || bydelFilter ? 'salmon' : 'darkest-wine'}
+            color={bydelView || bydelFilter ? 'darkest-wine' : 'salmon'}
             onClick={() => {
               setBydelView(true);
               setBydelFilter('');
@@ -59,7 +60,8 @@ const Recipes: FC = () => {
               setBydelView(false);
               setBydelFilter('');
             }}
-            style={bydelView || bydelFilter !== '' ? 'wine' : 'salmon'}
+            background={bydelView || bydelFilter !== '' ? 'darkest-wine' : 'salmon'}
+            color={bydelView || bydelFilter !== '' ? 'salmon' : 'darkest-wine'}
           />
         </Flex>
 
