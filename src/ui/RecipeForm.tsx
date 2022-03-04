@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import Input from './form/Input';
 import Select from './form/Select';
 import Ingredients from './Ingredients';
