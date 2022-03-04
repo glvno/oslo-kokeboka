@@ -12,6 +12,7 @@ import recipeService from '../services/recipes';
 import { bydels } from '../util/constants';
 import { useNavigate } from 'react-router-dom';
 import ErrorLabel from './form/ErrorLabel';
+import Checkbox from './form/Checkbox';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
@@ -107,10 +108,11 @@ const RecipeForm: FC = () => {
             <TextArea name="notes" placeholder="Any additional notes go here!" />
             <ErrorLabel name="email" />
             <Input name="email" placeholder="Email" />{' '}
-            <label>
-              <Field type="checkbox" name="contact" /> Would you be open to sharing the story behind
-              your recipe?
-            </label>
+            <Checkbox
+              name="contact"
+              label="Would you be open to sharing the story behind
+              your recipe?"
+            />
             <Button label="Submit" type="submit" />
           </form>
         );
