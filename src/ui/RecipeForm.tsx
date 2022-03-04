@@ -29,12 +29,12 @@ const formValueSchema = object({
   prepTime: object({ hours: string(), minutes: string() }),
   ingredients: array(
     object({
-      name: string().required().max(250),
+      name: string(),
       qty: string().max(100),
       units: string(),
     })
-  ),
-  directions: array(string().max(500)).min(1).max(100),
+  ).min(2, 'Please enter at least one ingredient.'),
+  directions: array(string().max(500)).min(2).max(100),
   notes: string().max(500),
   file: object(),
   email: string().email(),
@@ -79,19 +79,19 @@ const RecipeForm: FC = () => {
           <form onSubmit={handleSubmit}>
             <ErrorLabel name="title" />
             <Input name="title" placeholder="What is the name of the dish?" />
-            <ErrorLabel name="category" />
+            {/* <ErrorLabel name="category" /> */}
             <Select
               name="category"
               options={categories}
               placeholder="What kind of recipe is this?"
             />
-            <ErrorLabel name="author" />
+            {/* <ErrorLabel name="author" /> */}
             <Input name="author" placeholder="Tell us your name..." />
-            <ErrorLabel name="bydel" />
+            {/* <ErrorLabel name="bydel" /> */}
             <Select name="bydel" options={bydels} placeholder="Select your area" />
-            <ErrorLabel name="story" />
+            {/* <ErrorLabel name="story" /> */}
             <TextArea name="story" placeholder="What makes this dish special to you?" />
-            <ErrorLabel name="yield" />
+            {/* <ErrorLabel name="yield" /> */}
             <Select
               name="yield"
               placeholder="How many servings does this recipe produce?"
@@ -99,21 +99,20 @@ const RecipeForm: FC = () => {
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
             />
-            <ErrorLabel name="prepTime" />
+            {/* <ErrorLabel name="prepTime" /> */}
             <InputPrepTime name="prepTime" />
-            <ErrorLabel name={`ingredients.0.name`} />
             <Ingredients />
             <DirectionsBox />
-            <ErrorLabel name="notes" />
+            {/* <ErrorLabel name="notes" /> */}
             <TextArea name="notes" placeholder="Any additional notes go here!" />
-            <ErrorLabel name="email" />
+            {/* <ErrorLabel name="email" /> */}
             <Input name="email" placeholder="Email" />{' '}
             <Checkbox
               name="contact"
               label="Would you be open to sharing the story behind
               your recipe?"
             />
-            <Button label="Submit" type="submit" />
+            <Button label="Submit" type="submit" onClick={handleSubmit} />
           </form>
         );
       }}
