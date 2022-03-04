@@ -42,7 +42,7 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
         onClick={() => arrayHelpers.insert(index + 1, '')}
       />{' '}
       {hasMinusButton ? (
-        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
+        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} padding="5px" />
       ) : (
         ''
       )}

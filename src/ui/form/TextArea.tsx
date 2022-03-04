@@ -1,6 +1,8 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
 import { FC, useEffect } from 'react';
+import Flex from '../Flex';
+import ErrorLabel from './ErrorLabel';
 
 const StyledField = styled(Field)`
   background: var(--dark-wine);
@@ -12,7 +14,6 @@ const StyledField = styled(Field)`
   padding-top:10px;
   resize: none;
   flex-grow: 1;
-  flex-basis:200px;
   &::placeholder {
     color: var(--salmon);;
 `;
@@ -25,7 +26,12 @@ interface TextAreaProps {
 
 const TextArea: FC<TextAreaProps> = ({ name, placeholder, handleTextAreaChange = undefined }) => {
   useEffect(() => handleTextAreaChange);
-  return <StyledField name={name} placeholder={placeholder} component="textarea" />;
+  return (
+    <Flex direction="column" align="stretch" width="100%">
+      <ErrorLabel name={name} />
+      <StyledField name={name} placeholder={placeholder} component="textarea" />
+    </Flex>
+  );
 };
 
 export default TextArea;

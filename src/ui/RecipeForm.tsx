@@ -11,7 +11,6 @@ import { object, string, array, bool, addMethod } from 'yup';
 import recipeService from '../services/recipes';
 import { bydels } from '../util/constants';
 import { useNavigate } from 'react-router-dom';
-import ErrorLabel from './form/ErrorLabel';
 import Checkbox from './form/Checkbox';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
@@ -29,12 +28,14 @@ const formValueSchema = object({
   prepTime: object({ hours: string(), minutes: string() }),
   ingredients: array(
     object({
-      name: string(),
+      name: string().min(1).max(100),
       qty: string().max(100),
       units: string(),
     })
-  ).min(2, 'Please enter at least one ingredient.'),
-  directions: array(string().max(500)).min(2).max(100),
+  )
+    .compact((v) => !v.name)
+    .min(1),
+  directions: array(string()).compact().min(1),
   notes: string().max(500),
   file: object(),
   email: string().email(),
@@ -74,24 +75,18 @@ const RecipeForm: FC = () => {
         goToRecipePage(response.id);
       }}
     >
-      {({ handleSubmit }) => {
+      {({ handleSubmit, values }) => {
         return (
           <form onSubmit={handleSubmit}>
-            <ErrorLabel name="title" />
             <Input name="title" placeholder="What is the name of the dish?" />
-            {/* <ErrorLabel name="category" /> */}
             <Select
               name="category"
               options={categories}
               placeholder="What kind of recipe is this?"
             />
-            {/* <ErrorLabel name="author" /> */}
             <Input name="author" placeholder="Tell us your name..." />
-            {/* <ErrorLabel name="bydel" /> */}
             <Select name="bydel" options={bydels} placeholder="Select your area" />
-            {/* <ErrorLabel name="story" /> */}
             <TextArea name="story" placeholder="What makes this dish special to you?" />
-            {/* <ErrorLabel name="yield" /> */}
             <Select
               name="yield"
               placeholder="How many servings does this recipe produce?"
@@ -99,13 +94,10 @@ const RecipeForm: FC = () => {
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
             />
-            {/* <ErrorLabel name="prepTime" /> */}
             <InputPrepTime name="prepTime" />
             <Ingredients />
             <DirectionsBox />
-            {/* <ErrorLabel name="notes" /> */}
             <TextArea name="notes" placeholder="Any additional notes go here!" />
-            {/* <ErrorLabel name="email" /> */}
             <Input name="email" placeholder="Email" />{' '}
             <Checkbox
               name="contact"

@@ -1,6 +1,8 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import ErrorLabel from './ErrorLabel';
+import Flex from '../Flex';
 
 const StyledField = styled(Field)`
   background: var(--dark-wine);
@@ -19,12 +21,15 @@ interface SelectProps {
 
 const Select: FC<SelectProps> = ({ name, options, placeholder }) => {
   return (
-    <StyledField as="select" name={name}>
-      <option value="" label={placeholder} />
-      {options.map((option: string) => (
-        <option value={option} label={option} key={option} />
-      ))}
-    </StyledField>
+    <Flex direction="column" align="stretch">
+      <ErrorLabel name={name} />
+      <StyledField as="select" name={name}>
+        <option value="" label={placeholder} />
+        {options.map((option: string) => (
+          <option value={option} label={option} key={option} />
+        ))}
+      </StyledField>
+    </Flex>
   );
 };
 export default Select;
