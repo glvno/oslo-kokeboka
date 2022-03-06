@@ -26,7 +26,7 @@ const Bar = styled.div<BarProps>`
 const StyledDiv = styled.div`
   position: absolute;
   top: -160px;
-  left: 0px;
+  // left: 50px;
 `;
 const StyledAbout = styled(Flex)`
   padding-top: 350px;

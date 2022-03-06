@@ -9,9 +9,8 @@ const StyledDiv = styled.div`
   color: var(--salmon);
   height: 51px;
   display: flex;
-  justify-content: flex-left;
   gap: 10px;
-  margin-bottom: 20px;
+  align-items: flex-start;
 `;
 
 const StyledField = styled(Field)`

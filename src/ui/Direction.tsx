@@ -10,8 +10,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: flex-left;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 10px;
+  align-items: flex-start;
   padding-bottom: 10px;
 `;
 
@@ -38,6 +37,7 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
         padding="5px"
         type="button"
         label="+"
+        style="small"
         isDisabled={buttonDisabled}
         onClick={() => arrayHelpers.insert(index + 1, '')}
       />{' '}

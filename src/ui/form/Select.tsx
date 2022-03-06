@@ -11,6 +11,7 @@ const StyledField = styled(Field)`
   height: 51px;
   border-radius: 5px;
   padding-left: 10px;
+  box-sizing: border-box;
 `;
 
 interface SelectProps {

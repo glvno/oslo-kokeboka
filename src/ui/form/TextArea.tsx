@@ -10,7 +10,6 @@ const StyledField = styled(Field)`
   color: var(--salmon);
   height: 51px;
   padding-left: 10px;
-  margin-bottom: 10px;
   padding-top:10px;
   resize: none;
   flex-grow: 1;

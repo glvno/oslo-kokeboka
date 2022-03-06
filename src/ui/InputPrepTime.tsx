@@ -9,8 +9,8 @@ const StyledField = styled(Field)`
   color: var(--salmon);
   height: 51px;
   padding-left: 10px;
-  margin-bottom: 10px;
   font-family: monospace;
+  width: 100%;
 `;
 
 interface InputPrepTimeProps {

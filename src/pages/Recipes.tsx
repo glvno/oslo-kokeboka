@@ -41,7 +41,7 @@ const Recipes: FC = () => {
         Here you can view recipes either assorted by area or as a simple list from all across the
         city.
       </p>
-      <Flex direction="column" align="center">
+      <Flex direction="column" align="center" gap="10px">
         <Flex gap="10px" padding="24px 0px 24px">
           <Button
             type="button"
