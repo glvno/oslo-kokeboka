@@ -10,7 +10,6 @@ const StyledMain = styled.main`
   top: 130px;
   z-index: -1;
   max-width: 400px;
-  gap: 10px;
 `;
 
 const Page = ({ title, children }) => (

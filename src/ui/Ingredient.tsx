@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   height: 51px;
   display: flex;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 const StyledField = styled(Field)`
