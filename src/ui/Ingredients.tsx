@@ -7,7 +7,7 @@ import ErrorLabel from './form/ErrorLabel';
 const Ingredients: FC = () => {
   let keyCounter = 0;
   return (
-    <Flex direction="column">
+    <Flex direction="column" gap="20px">
       <ErrorLabel name="ingredients" />
       <FieldArray
         name="ingredients"

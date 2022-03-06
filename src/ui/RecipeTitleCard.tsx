@@ -33,7 +33,6 @@ const StyledFlex = styled(Flex)`
   align-content: center;
   padding: 30px;
   gap: 10px;
-  margin-bottom: 10px;
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: normal;

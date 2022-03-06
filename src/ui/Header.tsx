@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { FC, useState } from 'react';
 import Flex from './Flex';
 
-const StyledHeader = styled.header`
-  width: 100%;
+const StyledHeader = styled.div`
   height: 30px;
   background-color: var(--darkest-wine);
   font-weight: 600;
@@ -12,9 +11,8 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 30px;
   padding-top: 25px;
-  padding-left: 25px;
+  padding-left: 10%;
   /* or 34px */
-
   letter-spacing: 0.01em;
   text-transform: uppercase;
 `;
@@ -31,10 +29,10 @@ const StyledNav = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   flex-direction: column;
+  padding-right: 10%;
 
   text-shadow: -1px 1px 0px #14000f;
   text-transform: uppercase;
-  margin-bottom: 10px;
 `;
 
 const StyledDiv = styled.div`
@@ -64,7 +62,7 @@ const StyledLink = styled(Link)`
 const Header: FC<{ title: string }> = ({ title }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <Flex width="100%" direction="column" align="stretch">
+    <Flex direction="column" align="stretch" width="100%">
       <StyledHeader>Oslo Kokeboka</StyledHeader>
 
       <StyledNav>

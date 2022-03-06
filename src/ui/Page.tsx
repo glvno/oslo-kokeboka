@@ -7,14 +7,13 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   top: 130px;
   z-index: -1;
   max-width: 400px;
 `;
 
 const Page = ({ title, children }) => (
-  <Flex direction="column" maxWidth="500px" justify="space-between" align="center">
+  <Flex direction="column" width="100%" align-items="center" maxWidth="375px">
     <Header title={title} />
     <StyledMain>{children}</StyledMain>
   </Flex>

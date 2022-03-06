@@ -10,8 +10,8 @@ const StyledField = styled(Field)`
   color: var(--salmon);
   height: 51px;
   padding-left: 10px;
-  margin-bottom: 15px;
   flex-grow: 1;
+  box-sizing: border-box;
   &::placeholder {
     color: var(--salmon);
   }
