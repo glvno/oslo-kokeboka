@@ -11,7 +11,7 @@ const StyledHeader = styled.div`
   font-weight: 600;
   font-size: 30px;
   padding-top: 25px;
-  padding-left: 25px;
+  padding-left: 10%;
   /* or 34px */
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -29,6 +29,7 @@ const StyledNav = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   flex-direction: column;
+  padding-right: 10%;
 
   text-shadow: -1px 1px 0px #14000f;
   text-transform: uppercase;

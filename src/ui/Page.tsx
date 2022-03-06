@@ -14,7 +14,7 @@ const StyledMain = styled.main`
 `;
 
 const Page = ({ title, children }) => (
-  <Flex direction="column" width="100%" maxWidth="500px">
+  <Flex direction="column" width="100%" align-items="center" maxWidth="375px">
     <Header title={title} />
     <StyledMain>{children}</StyledMain>
   </Flex>
