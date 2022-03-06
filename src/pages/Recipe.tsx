@@ -4,6 +4,7 @@ import Page from '../ui/Page';
 import recipeService from '../services/recipes';
 import RecipeTitleCard from '../ui/RecipeTitleCard';
 import QuestionnaireCard from '../ui/QuestionnaireCard';
+import Flex from '../ui/Flex';
 
 const Recipe: FC = () => {
   const [recipe, setRecipe] = useState({});
@@ -19,8 +20,10 @@ const Recipe: FC = () => {
 
   return (
     <Page title={'Oslo Recipes'}>
-      <RecipeTitleCard recipe={recipe} />
-      <QuestionnaireCard recipe={recipe} />
+      <Flex direction="column" gap="15px">
+        <RecipeTitleCard recipe={recipe} />
+        <QuestionnaireCard recipe={recipe} />
+      </Flex>
     </Page>
   );
 };
