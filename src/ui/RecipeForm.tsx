@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import Input from './form/Input';
 import Select from './form/Select';
 import Ingredients from './Ingredients';
@@ -7,32 +7,52 @@ import InputPrepTime from './InputPrepTime';
 import DirectionsBox from './DirectionsBox';
 import TextArea from './form/TextArea';
 import Button from './form/Button';
-const bydels = [
-  'Alna',
-  'Bjerke',
-  'Frogner',
-  'Gamle Oslo',
-  'Grorud',
-  'Grünerløkka',
-  'Nordre Aker',
-  'Nordstrand',
-  'Sagene',
-  'St. Hanshaugen',
-  'Stovner',
-  'Søndre Nordstrand',
-  'Ullern',
-  'Vestre Aker',
-  'Østensjø',
-];
+import { object, string, array, bool, addMethod } from 'yup';
+import recipeService from '../services/recipes';
+import { bydels } from '../util/constants';
+import { useNavigate } from 'react-router-dom';
+import Checkbox from './form/Checkbox';
 
 const categories = ['Appetizer', 'Entree', 'Drink', 'Other'];
 
+addMethod(string, 'replaceEmptyName', function () {
+  return this.transform((value) => (value === '' ? 'Anonymous' : value));
+});
+
+const formValueSchema = object({
+  title: string().max(250).required(),
+  bydel: string().required(),
+  category: string(),
+  story: string().max(1500),
+  author: string().replaceEmptyName(),
+  prepTime: object({ hours: string(), minutes: string() }),
+  ingredients: array(
+    object({
+      name: string().min(1).max(100),
+      qty: string().max(100),
+      units: string(),
+    })
+  )
+    .compact((v) => !v.name)
+    .min(1),
+  directions: array(string()).compact().min(1),
+  notes: string().max(500),
+  file: object(),
+  email: string().email(),
+  contact: bool(),
+  reviewed: bool(),
+  hidden: bool(),
+});
+
 const RecipeForm: FC = () => {
-  //TODO: convert strings in ary to objs for label/id purposes
+  const navigate = useNavigate();
+  const goToRecipePage = (id) => {
+    navigate(`/recipe/${id}`);
+  };
   return (
     <Formik
       initialValues={{
-        recipeName: '',
+        title: '',
         bydel: '',
         story: '',
         category: '',
@@ -42,18 +62,23 @@ const RecipeForm: FC = () => {
         ingredients: [{ name: '', qty: '', units: '' }],
         directions: [''],
         notes: '',
-        file: null,
+        file: {},
         email: '',
         contact: false,
         reviewed: false,
         hidden: false,
       }}
-      onSubmit={(values) => console.log(values, null, 2)}
+      validationSchema={formValueSchema}
+      onSubmit={async (values) => {
+        const parsedValues = await formValueSchema.validate(values);
+        const response = await recipeService.create(parsedValues);
+        goToRecipePage(response.id);
+      }}
     >
-      {({ handleSubmit, values }) => {
+      {({ handleSubmit }) => {
         return (
           <form onSubmit={handleSubmit}>
-            <Input name="recipeName" placeholder="What is the name of the dish?" />
+            <Input name="title" placeholder="What is the name of the dish?" />
             <Select
               name="category"
               options={categories}
@@ -65,7 +90,6 @@ const RecipeForm: FC = () => {
             <Select
               name="yield"
               placeholder="How many servings does this recipe produce?"
-              // Create an array containing ints 0..N, remove 0, concat an 'N+' string as final element
               options={Array(12)
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
@@ -74,29 +98,13 @@ const RecipeForm: FC = () => {
             <Ingredients />
             <DirectionsBox />
             <TextArea name="notes" placeholder="Any additional notes go here!" />
-            {/* <input
-                id="file"
-                name="file"
-                type="file"
-                onChange={(event) => {
-                  props.setFieldValue('file', event.currentTarget.files[0]);
-                }}
-              /> */}
             <Input name="email" placeholder="Email" />{' '}
-            <label>
-              <Field type="checkbox" name="contact" /> Would you be open to sharing the story behind
-              your recipe?
-            </label>
-            <Button
-              label="Submit"
-              onSubmit={() => {
-                console.log({
-                  fileName: values.file.name,
-                  type: values.file.type,
-                  size: `${values.file.size} bytes`,
-                });
-              }}
+            <Checkbox
+              name="contact"
+              label="Would you be open to sharing the story behind
+              your recipe?"
             />
+            <Button label="Submit" type="submit" onClick={handleSubmit} />
           </form>
         );
       }}

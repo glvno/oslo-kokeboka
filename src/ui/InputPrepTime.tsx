@@ -4,9 +4,9 @@ import { FC } from 'react';
 import Flex from './Flex';
 
 const StyledField = styled(Field)`
-  background: var(--input-background);
-  border-bottom: 1px var(--text) solid;
-  color: var(--text);
+  background: var(--dark-wine);
+  border-bottom: 1px var(--salmon) solid;
+  color: var(--salmon);
   height: 51px;
   padding-left: 10px;
   margin-bottom: 10px;

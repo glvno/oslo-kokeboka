@@ -1,5 +1,6 @@
 import { FieldArray } from 'formik';
 import { FC } from 'react';
+import ErrorLabel from './form/ErrorLabel';
 import Direction from './Direction';
 
 const DirectionsBox: FC = () => {
@@ -11,7 +12,12 @@ const DirectionsBox: FC = () => {
         return arrayHelpers.form.values.directions.map((_, index) => {
           keyCounter += 1;
 
-          return <Direction arrayHelpers={arrayHelpers} index={index} key={keyCounter} />;
+          return (
+            <div key={keyCounter}>
+              <ErrorLabel name="directions" />
+              <Direction arrayHelpers={arrayHelpers} index={index} />
+            </div>
+          );
         });
       }}
     />

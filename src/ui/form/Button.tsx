@@ -1,28 +1,53 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 
-const StyledButton = styled.button`
-  border: 1px var(--text) solid;
-  height: 30px;
+interface StyledButtonProps {
+  background?: string;
+  padding?: string;
+  color?: string;
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
   border-radius: 5px;
-  background: var(--input-background);
-  padding: 3px;
+  font-weight: 600;
+  font-size: 17px;
+  border-width: 1px;
+  border-style: solid;
+
+  background: var(--${({ background }) => background});
+  padding: ${({ padding }) => padding};
+  border-color: var(--${({ color }) => color});
+  color: var(--${({ color }) => color});
   &:disabled {
     opacity: 0.2;
   }
 `;
 
-interface ButtonProps {
+interface ButtonProps extends StyledButtonProps {
   label: string;
-  onSubmit?: () => void;
-  type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
+  onClick: () => void;
   isDisabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const Button: FC<ButtonProps> = ({ label, type, onClick, isDisabled = false }) => {
+const Button: FC<ButtonProps> = ({
+  label,
+  onClick,
+  type = 'submit',
+  isDisabled = false,
+  background = 'ochre',
+  padding = '15px',
+  color = 'darkest-wine',
+}) => {
   return (
-    <StyledButton onClick={onClick} type={type} disabled={isDisabled}>
+    <StyledButton
+      background={background}
+      padding={padding}
+      onClick={onClick}
+      disabled={isDisabled}
+      color={color}
+      type={type}
+    >
       {label}
     </StyledButton>
   );

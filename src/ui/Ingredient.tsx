@@ -6,24 +6,22 @@ import { FC, useState } from 'react';
 import Button from './form/Button';
 
 const StyledDiv = styled.div`
-  color: var(--text);
+  color: var(--salmon);
   height: 51px;
   display: flex;
   justify-content: flex-left;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const StyledField = styled(Field)`
   border-radius: 0px;
-  border-bottom: 1px var(--text) solid;
-  height: 40px;
+  border-bottom: 1px var(--salmon) solid;
+  height: 51px;
   width: 10%;
   padding-left: 10px;
-  background: var(--input-background);
-  margin-bottom: 10px;
-  color: var(--text);
+  background: var(--dark-wine);
+  color: var(--salmon);
 `;
 
 interface IngredientProps {
@@ -53,13 +51,14 @@ const Ingredient: FC<IngredientProps> = ({ arrayHelpers, index }) => {
         }}
       />
       <Button
+        padding="5px"
         isDisabled={buttonDisabled}
         type="button"
         label="+"
-        onClick={() => arrayHelpers.insert(index + 1, { name: '', quantity: '', units: '' })}
+        onClick={() => arrayHelpers.insert(index + 1, { name: '', qty: '', units: '' })}
       />
       {hasMinusButton ? (
-        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
+        <Button type="button" padding="5px" label="-" onClick={() => arrayHelpers.remove(index)} />
       ) : (
         ''
       )}

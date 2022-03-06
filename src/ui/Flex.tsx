@@ -37,7 +37,9 @@ const Flex = styled.div<FlexProps>`
   align-items: ${({ align }) => align || 'flex-start'};
   flex-direction: ${({ direction }) => direction || 'row'};
   flex-grow: ${({ grow }) => grow || '0'};
-  max-width: ${({ maxWidth }) => maxWidth || '0'};
+  max-width: ${({ maxWidth }) => maxWidth || 'unset'};
 `;
 
 export default Flex;
+
+//TODO: abstract to take any HTML element?

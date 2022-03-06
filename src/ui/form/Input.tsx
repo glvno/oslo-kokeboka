@@ -1,17 +1,19 @@
 import { Field } from 'formik';
 import styled from '@emotion/styled';
 import { FC, useEffect } from 'react';
+import ErrorLabel from './ErrorLabel';
+import Flex from '../Flex';
 
 const StyledField = styled(Field)`
-  background: var(--input-background);
-  border-bottom: 1px var(--text) solid;
-  color: var(--text);
+  background: var(--dark-wine);
+  border-bottom: 1px var(--salmon) solid;
+  color: var(--salmon);
   height: 51px;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   flex-grow: 1;
   &::placeholder {
-    color: var(--text);
+    color: var(--salmon);
   }
 `;
 
@@ -23,7 +25,12 @@ interface InputProps {
 
 const Input: FC<InputProps> = ({ name, placeholder, handleInputChange = undefined }) => {
   useEffect(() => handleInputChange);
-  return <StyledField type="input" name={name} placeholder={placeholder} />;
+  return (
+    <Flex direction="column" align="stretch">
+      <ErrorLabel name={name} />
+      <StyledField type="input" name={name} placeholder={placeholder} />
+    </Flex>
+  );
 };
 
 export default Input;

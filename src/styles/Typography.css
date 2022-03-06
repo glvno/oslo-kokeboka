@@ -3,8 +3,7 @@ h1 {
   font-weight: bold;
   font-size: 30px;
   letter-spacing: 1%;
-  line-height: 34px;
-  color: var(--text);
+  color: var(--salmon);
   margin: 0;
 }
 

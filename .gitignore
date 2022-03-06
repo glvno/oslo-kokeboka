@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #dummy data for json-server
-db.json
+# db.json

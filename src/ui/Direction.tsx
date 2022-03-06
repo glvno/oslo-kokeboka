@@ -5,7 +5,7 @@ import { FC, useState } from 'react';
 import Button from './form/Button';
 
 const StyledDiv = styled.div`
-  color: var(--text);
+  color: var(--salmon);
   height: 51px;
   display: flex;
   justify-content: flex-left;
@@ -35,13 +35,14 @@ const Direction: FC<DirectionProps> = ({ arrayHelpers, index }) => {
         }}
       />
       <Button
+        padding="5px"
         type="button"
         label="+"
         isDisabled={buttonDisabled}
         onClick={() => arrayHelpers.insert(index + 1, '')}
       />{' '}
       {hasMinusButton ? (
-        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} />
+        <Button type="button" label="-" onClick={() => arrayHelpers.remove(index)} padding="5px" />
       ) : (
         ''
       )}
