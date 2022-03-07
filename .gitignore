@@ -105,3 +105,6 @@ dist
 
 #dummy data for json-server
 # db.json
+
+# Local Netlify folder
+.netlify

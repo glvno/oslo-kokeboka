@@ -10,7 +10,7 @@ import Flex from './ui/Flex';
 function App() {
   return (
     <Flex justify="space-around">
-      <Router basename="/oslo-kokebook/">
+      <Router basename="/">
         <Routes>
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/recipe/:id" element={<Recipe />} />
