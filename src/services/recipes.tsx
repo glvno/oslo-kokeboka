@@ -1,8 +1,8 @@
 import axios from 'axios';
-const baseUrl = '/recipe';
-
+// const baseUrl = '/recipe';
+const baseUrl = '/api';
 const getAll = async () => {
-  const response = await axios.get(baseUrl);
+  const response = await axios.get(`${baseUrl}/createRecipe`);
   return response.data;
 };
 
@@ -12,7 +12,7 @@ const getOne = async (id) => {
 };
 
 const create = async (newObject) => {
-  const response = await axios.post(baseUrl, newObject);
+  const response = await axios.post(`${baseUrl}/createRecipe`, newObject);
   return response.data;
 };
 

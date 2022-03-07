@@ -5,8 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: '/',
   server: {
-    port: 3002,
-    proxy: { '/recipe': 'http://localhost:3000/' },
+    open: true,
+    proxy: {
+      '/api/': {
+        target: 'http://localhost:9000/.netlify/functions',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   plugins: [react()],
 });
