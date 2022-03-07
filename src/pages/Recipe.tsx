@@ -13,7 +13,7 @@ const Recipe: FC = () => {
   useEffect(() => {
     const getRecipe = async (id) => {
       const response = await recipeService.getOne(id);
-      setRecipe(response);
+      setRecipe(response.data);
     };
     getRecipe(id);
   }, []);

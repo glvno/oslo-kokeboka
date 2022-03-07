@@ -2,12 +2,12 @@ import axios from 'axios';
 // const baseUrl = '/recipe';
 const baseUrl = '/api';
 const getAll = async () => {
-  const response = await axios.get(`${baseUrl}/getAllRecipes`);
+  const response = await axios.get(`${baseUrl}`);
   return response.data;
 };
 
 const getOne = async (id) => {
-  const response = await axios.get(`${baseUrl}/${id}`);
+  const response = await axios.get(`${baseUrl}/getRecipeById/${id}`);
   return response.data;
 };
 
