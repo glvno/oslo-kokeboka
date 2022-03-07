@@ -2,7 +2,7 @@ import axios from 'axios';
 // const baseUrl = '/recipe';
 const baseUrl = '/api';
 const getAll = async () => {
-  const response = await axios.get(`${baseUrl}/createRecipe`);
+  const response = await axios.get(`${baseUrl}/getAllRecipes`);
   return response.data;
 };
 
@@ -12,7 +12,7 @@ const getOne = async (id) => {
 };
 
 const create = async (newObject) => {
-  const response = await axios.post(`${baseUrl}/createRecipe`, newObject);
+  const response = await axios.post(`${baseUrl}/addRecipe`, newObject);
   return response.data;
 };
 
