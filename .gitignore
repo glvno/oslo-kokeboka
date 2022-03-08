@@ -108,3 +108,5 @@ dist
 
 # Local Netlify folder
 .netlify
+
+built-lambda
