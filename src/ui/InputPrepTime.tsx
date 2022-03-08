@@ -21,14 +21,7 @@ const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
   return (
     <Flex gap="15px" align="center">
       <label style={{ display: 'inline-block' }}> Time to prepare:</label>
-      <StyledField
-        type="number"
-        placeholder="00"
-        step="1"
-        min="0"
-        max="12"
-        name={`${name}.hours`}
-      />
+      <StyledField type="number" placeholder="00" step="1" min="0" max="12" name="prepTime.hours" />
       <label>hours</label>
       {'  '}
       <StyledField
@@ -37,7 +30,7 @@ const InputPrepTime: FC<InputPrepTimeProps> = (name) => {
         step="5"
         min="0"
         max="55"
-        name={`${name}.minutes`}
+        name="prepTime.minutes"
       />
       {'  '}
       <label>minutes</label>

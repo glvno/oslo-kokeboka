@@ -95,7 +95,7 @@ const RecipeForm: FC = () => {
                 .fill(true)
                 .map((_, i) => (i === 11 ? `${i + 1}+` : `${i + 1}`))}
             />
-            <InputPrepTime name="prepTime" />
+            <InputPrepTime />
             <Ingredients />
             <DirectionsBox />
             <TextArea name="notes" placeholder="Any additional notes go here!" />
