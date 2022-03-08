@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const baseUrl = '/recipe';
-const baseUrl = '/.netlify/functions';
+// const baseUrl = '/.netlify/functions';
+const baseUrl = '/api';
 const getAll = async () => {
   const response = await axios.get(`${baseUrl}/getRecipes`);
   return response.data;

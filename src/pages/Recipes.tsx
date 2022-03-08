@@ -7,6 +7,7 @@ import Flex from '../ui/Flex';
 import { bydels } from '../util/constants';
 import BydelCard from '../ui/BydelCard';
 import { useNavigate } from 'react-router-dom';
+import { CLIENT_RENEG_WINDOW } from 'tls';
 
 const Recipes: FC = () => {
   const [recipes, setRecipes] = useState([]);
@@ -19,16 +20,17 @@ const Recipes: FC = () => {
   useEffect(() => {
     const getRecipes = async () => {
       const response = await recipeService.getAll();
-      const responseWithIds = response.map((recipe) => {
-        return { data: { id: recipe.ref.id, ...recipe.data }, ...recipe };
+      const responseWithIds = await response.map((recipe) => {
+        const id = recipe.ref['@ref'].id;
+        console.log(id);
+        return { ...recipe, data: { ...recipe.data, id: id } };
       });
-      const responseData = responseWithIds.map((recipe) => recipe.data);
-
+      const responseData = await responseWithIds.map((recipe) => recipe.data);
       setRecipes(responseData);
     };
     getRecipes();
   }, []);
-
+  console.log(recipes);
   const filteredRecipes = recipes.filter((recipe) => recipe.bydel.includes(`${bydelFilter}`));
 
   const handleBydelClick = (bydelName) => {
