@@ -9,7 +9,7 @@
     "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && npm-run-all --parallel start:app start:server",
     "start:app": "vite",
     "start:server": "netlify-lambda serve functions",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && npm-run-all --parallel build:**",
+    "build": "npm-run-all --parallel build:**",
     "build:app": "vite build",
     "build:functions": "netlify-lambda build functions",
     "deploy": "build:app && build:functions"
