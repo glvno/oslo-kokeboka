@@ -7,8 +7,8 @@ export default defineConfig({
   server: {
     open: true,
     proxy: {
-      '/api': {
-        target: '/.netlify/functions',
+      '/api/': {
+        target: 'http://localhost:9000/.netlify/functions',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
