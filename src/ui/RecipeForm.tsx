@@ -72,7 +72,8 @@ const RecipeForm: FC = () => {
       onSubmit={async (values) => {
         const parsedValues = await formValueSchema.validate(values);
         const response = await recipeService.create(parsedValues);
-        goToRecipePage(response.id);
+        const id = response.ref['@ref'].id;
+        goToRecipePage(id);
       }}
     >
       {({ handleSubmit }) => {

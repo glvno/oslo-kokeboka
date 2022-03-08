@@ -19,7 +19,12 @@ const Recipes: FC = () => {
   useEffect(() => {
     const getRecipes = async () => {
       const response = await recipeService.getAll();
-      setRecipes(response);
+      const responseWithIds = response.map((recipe) => {
+        return { data: { id: recipe.ref.id, ...recipe.data }, ...recipe };
+      });
+      const responseData = responseWithIds.map((recipe) => recipe.data);
+
+      setRecipes(responseData);
     };
     getRecipes();
   }, []);
