@@ -8,6 +8,8 @@ const getAll = async () => {
 
 const getOne = async (id) => {
   const response = await axios.get(`${baseUrl}/getRecipeById/${id}`);
+  console.log(response);
+
   return response.data;
 };
 
