@@ -110,3 +110,9 @@ dist
 .netlify
 
 built-lambda
+
+.elasticbeanstalk
+
+.vscode
+
+.elasticbeanstalk
