@@ -8,3 +8,4 @@
   from = "/*"
   to = "/index.thml"
   status = 200
+  query = {path = ":path"}
